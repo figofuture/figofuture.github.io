@@ -1,19 +1,90 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: KEEP FIGOFUTURE's G.A.N.G.S.T.A.
+title: KEEP IT G.A.N.G.S.T.A
+SEOTitle: 非戈的博客 | FIGOTAN's Blog
+header-img: img/home-bg.jpg
 email: figofuture@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  When in doubt, use brute force.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://figofuture.github.io" # the base hostname & protocol for your site
-twitter_username: figofuture
-github_username:  figofuture
+description: "关于技术与编程、黑客与极客 | 非戈，Tech Lover，APP Developer，Software Researcher | 这里是 @figofuture 的个人博客，与你一起发现的世界。"
+keyword: "figo, 非戈, figofuture, 菲戈, 飞哥, @figofuture, 非戈的博客, Blog, 博客, 个人网站, 互联网, 技术, 运营, 产品, Linux, Android, 安卓, iOS, Gentoo, 极客, Geek"
+url: "http://figotan.org"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     figofuture
+zhihu_username:     figofuture
+github_username:    figofuture
+twitter_username:  figofuture
+facebook_username:  figofuture
+
+
 
 # Build settings
+highlighter: pygments
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+duoshuo_username: figofuture
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 
+# Google Analytics
+ga_track_id: ''            # Format: UA-xxxxxx-xx
+ga_domain: figotan.org
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "世界那么大，我一直在路上。读书，撸代码，写文章，玩科技，看世界。"
+sidebar-avatar: /img/avatar-figo.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Friends
+friends: [
+    {
+        title: "南京谷歌开发者社区",
+        href: "http://www.njgdg.org/"
+    },{
+        title: "南京谷歌开发者社区视频中心",
+        href: "http://v.qq.com/vplus/d5750056b4bf0b516f7512c83666adff"
+    },{
+        title: "安卓开发工具汇总",
+        href: "http://www.androiddevtools.cn"
+    },{
+        title: "Fernando Cejas",
+        href: "http://fernandocejas.com"
+    }
+]
