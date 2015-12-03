@@ -15,7 +15,7 @@ RSS: false
 weibo_username:     figofuture
 zhihu_username:     figofuture
 github_username:    figofuture
-twitter_username:  figofuture
+twitter_username:   figofuture
 facebook_username:  figofuture
 
 
@@ -40,7 +40,7 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+disqus_username: figofuture
 
 # Duoshuo settings
 duoshuo_username: figofuture
@@ -54,7 +54,7 @@ duoshuo_share: true                     # set to false if you want to use Commen
 # Baidu Analytics
 ba_track_id: 
 # Google Analytics
-ga_track_id: ''            # Format: UA-xxxxxx-xx
+ga_track_id: 'UA-70990229-1'            # Format: UA-xxxxxx-xx
 ga_domain: figotan.org
 
 
