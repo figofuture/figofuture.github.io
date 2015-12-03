@@ -76,15 +76,27 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 friends: [
     {
         title: "南京谷歌开发者社区",
-        href: "http://www.njgdg.org/"
+        href:  "http://www.njgdg.org/"
     },{
         title: "南京谷歌开发者社区视频中心",
-        href: "http://v.qq.com/vplus/d5750056b4bf0b516f7512c83666adff"
+        href:  "http://v.qq.com/vplus/d5750056b4bf0b516f7512c83666adff"
     },{
         title: "安卓开发工具汇总",
-        href: "http://www.androiddevtools.cn"
+        href:  "http://www.androiddevtools.cn"
+    },{
+        title: "稀土掘金",
+        href:  "http://gold.xitu.io"
+    },{
+        title: "开发技术前线",
+        href:  "http://www.devtf.cn"
+    },{
+        title: "脉脉不得语的技术博客",
+        href:  "http://www.inferjay.com"
+    },{
+        title: "Cyril Mottier",
+        href:  "http://cyrilmottier.com"
     },{
         title: "Fernando Cejas",
-        href: "http://fernandocejas.com"
+        href:  "http://fernandocejas.com"
     }
 ]
