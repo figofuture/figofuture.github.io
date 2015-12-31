@@ -1,9 +1,4 @@
 ---
-layout: post
-title: JAVA decompiler collections
----
-
----
 layout:     post
 title:      "JAVA decompiler collections"
 subtitle:   ""  
