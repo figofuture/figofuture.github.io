@@ -3,6 +3,20 @@ layout: post
 title: JAVA decompiler collections
 ---
 
+---
+layout:     post
+title:      "JAVA decompiler collections"
+subtitle:   ""  
+date:       2015-11-24
+author:     "figo"
+header-img: ""
+tags:
+    - Java
+    - decompiler
+    - jad
+    - 2015
+---
+
 ## Procyon  
 open-source, [see more][1]  
 Author: Mike Strobel  
