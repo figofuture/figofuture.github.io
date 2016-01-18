@@ -125,5 +125,11 @@ friends: [
     },{
         title: "Realm",
         href:  "https://realm.io"
+    },{
+        title: "ReactiveX",
+        href:  "http://reactivex.io"
+    },{
+        title: "FlatBuffers",
+        href:  "http://google.github.io/flatbuffers/"
     }
 ]
