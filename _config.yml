@@ -75,12 +75,6 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "南京谷歌开发者社区",
-        href:  "http://www.njgdg.org/"
-    },{
-        title: "南京谷歌开发者社区视频中心",
-        href:  "http://v.qq.com/vplus/d5750056b4bf0b516f7512c83666adff"
-    },{
         title: "安卓开发工具汇总",
         href:  "http://www.androiddevtools.cn"
     },{
@@ -111,6 +105,9 @@ friends: [
        title: "V2EX",
        href:  "http://www.v2ex.com"
     },{
+       title: "简书",
+       htrf:  "http://www.jianshu.com"
+    },{
         title: "Jake Wharton",
         href:  "http://jakewharton.com"
     },{
@@ -119,5 +116,14 @@ friends: [
     },{
         title: "Fernando Cejas",
         href:  "http://fernandocejas.com"
+    },{
+        title: "Yet Another Coder's Blog",
+        href:  "http://blog.egorand.me"
+    },{
+        title: "App Chunk",
+        href:  "http://appchunk.com"
+    },{
+        title: "Realm",
+        href:  "https://realm.io"
     }
 ]
