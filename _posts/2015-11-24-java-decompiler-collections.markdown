@@ -35,7 +35,7 @@ Updated in 2015. CFR is able to decompile modern Java features - Java 8 lambdas 
 [2]: http://www.benf.org/other/cfr/
 
 # JD  
-free for non-commercial use only, [see more][3]  
+Free for non-commercial use only, [see more][3]  
 Author: Emmanuel Dupuy  
 
 Updated in 2014. Has its own visual interface and plugins to Eclipse and IntelliJ . Written in C++, so very fast. Supports Java 5.  
@@ -89,6 +89,7 @@ Please, use it only for legitimate purposes.
 # ClassyShark
 open-source, [see more][11]
 Author: Boris Farber
+
 [ClassyShark][12] is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies. 
 The browser supports multiple formats including libraries (.dex, .aar, .so), executables (.apk, .jar, .class) and AndroidManifest (.xml).
 
