@@ -78,8 +78,6 @@ Jadx decompiles .class and .jar files, but also it produces Java source code fro
 
 [10]: https://sourceforge.net/projects/jadx/files/
 
-Please, use it only for legitimate purposes.
-
 # ClassyShark
 open-source, [see more][11]  
 Author: Boris Farber  
@@ -88,3 +86,5 @@ The browser supports multiple formats including libraries (.dex, .aar, .so), exe
 
 [11]: https://github.com/google/android-classyshark
 [12]: http://www.api-solutions.com/p/classyshark_6.html
+
+Please, use it only for legitimate purposes.
