@@ -68,11 +68,13 @@ developer of JBoss Cake, is an early but promising work in progress.
 [8]: https://github.com/bradsdavis/candle-decompiler
 
 # JAD  
-given here only for historical reason. Free, no source-code available, jad download mirror  
+given here only for historical reason. Free, no source-code available, [jad download mirror][9]
 Author: Pavel Kouznetsov  
 
 Probably, this is the most popular Java decompiler, but primarily of this age only. Written in C++, so very fast. 
 Outdated, unsupported and does not decompile correctly Java 5 and later.  
+
+[9]: http://www.javadecompilers.com/jad
 
 # Jadx  
 Android application package (APK) is the package file format used to distribute and install application software onto Google's Android operating system.  
@@ -85,8 +87,10 @@ Jadx decompiles .class and .jar files, but also it produces Java source code fro
 Please, use it only for legitimate purposes.
 
 # ClassyShark
-[ClassyShark][11] is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies. 
-The browser supports multiple formats including libraries (.dex, .aar, .so), executables (.apk, .jar, .class) and AndroidManifest (.xml). [see more][12]
+open-source, [see more][11]
+Author: Boris Farber
+[ClassyShark][12] is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies. 
+The browser supports multiple formats including libraries (.dex, .aar, .so), executables (.apk, .jar, .class) and AndroidManifest (.xml).
 
-[11]: http://www.api-solutions.com/p/classyshark_6.html
-[12]: https://github.com/google/android-classyshark
+[11]: https://github.com/google/android-classyshark
+[12]: http://www.api-solutions.com/p/classyshark_6.html
