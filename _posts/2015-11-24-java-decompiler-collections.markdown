@@ -47,7 +47,7 @@ Updated in 2014. Has its own visual interface and plugins to Eclipse and Intelli
 open-source, [see more][5]  
 Author: Egor Ushakov  
 
-Updated in 2015. Very promising analytical Java decompiler, now becomes an integral part of IntelliJ 14. ([see more][6]) 
+Updated in 2015. Very promising analytical Java decompiler, now becomes an integral part of IntelliJ 14. ([see more][6])  
 Supports Java up to version 6 (Annotations, generics, enums)  
 
 [5]: https://github.com/fesh0r/fernflower
@@ -68,7 +68,7 @@ developer of JBoss Cake, is an early but promising work in progress.
 [8]: https://github.com/bradsdavis/candle-decompiler
 
 # JAD  
-given here only for historical reason. Free, no source-code available, [jad download mirror][9]
+given here only for historical reason. Free, no source-code available, [jad download mirror][9]  
 Author: Pavel Kouznetsov  
 
 Probably, this is the most popular Java decompiler, but primarily of this age only. Written in C++, so very fast. 
@@ -87,10 +87,10 @@ Jadx decompiles .class and .jar files, but also it produces Java source code fro
 Please, use it only for legitimate purposes.
 
 # ClassyShark
-open-source, [see more][11]
+open-source, [see more][11]  
 Author: Boris Farber
 
-[ClassyShark][12] is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies. 
+[ClassyShark][12] is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies.  
 The browser supports multiple formats including libraries (.dex, .aar, .so), executables (.apk, .jar, .class) and AndroidManifest (.xml).
 
 [11]: https://github.com/google/android-classyshark
