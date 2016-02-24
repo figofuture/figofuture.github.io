@@ -20,7 +20,7 @@ The constants to figure out how many CPUs the machine has are in the sysctl head
 The C99 compiler has different semantics for the inline keyword, so inline functions should also be static.
 Instead of llistxattr(), lgetxattr(), lsetxattr(), Apple uses a XATTR_NOFOLLOW flag on the non-link equivalent functions.
 Here’s a complete download-and-build recipe:
-{% highlight ruby %}
+{% highlight bash %}
 curl -OL http://iweb.dl.sourceforge.net/project/squashfs/squashfs/squashfs4.2/squashfs4.2.tar.gz
 tar xzvf squashfs4.2.tar.gz
 cd squashfs4.2/squashfs-tools
@@ -48,7 +48,7 @@ The limit of open files is somewhat low on a Mac, so you’ll get a bunch of err
 write_file: failed to create file squashfs-root/path/to/file, because Too many open files
 
 Just change the limit in the shell before running unsquashfs:
-{% highlight ruby %}
+{% highlight bash %}
 ulimit -n 2000
 sudo unsquashfs filesystem.squashfs
 {% endhighlight %}
