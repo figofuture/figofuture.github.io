@@ -12,7 +12,7 @@ tags:
     - nginx
     - 2016
 ---
-As we know the authpuppy official wiki website only supply the installation guide on apache web server, but as a good result as I practiced, it can be successfully installed on the nginx web server.
+As we know the authpuppy official [wiki website][1] only supply the installation guide on apache web server, but as a good result as I practiced, it can be successfully installed on the nginx web server.
 
 Go on details, my linux server using Gentoo Linux, but i think it works on any linux popular distribution, Redhat, centos, debian, ubuntu, arch etc.
 
@@ -94,7 +94,7 @@ check nginx is OK.
 
 Next, download the authpuppy source codes from authpuppy official website
 {% highlight bash %}
-# wget -c authpuppy-1.0.0-stable.tgz
+# wget -c [authpuppy-1.0.0-stable.tgz][2]
 
 # tar xf authpuppy-1.0.0-stable.tgz
 
@@ -144,3 +144,6 @@ If the database is not configured yet, the file will be created. A check of requ
 Follow the instructions on the screen through the installation process. If it is a first install, you’ll be invited to create a first admin user for the application
 
 Congratulations! You’re now ready to go! Just click on the “Administrative Login” link to get the login prompt for the admin section and access more interesting stuff.
+
+[1]: http://www.authpuppy.org/doc/Getting_Started
+[2]: https://launchpad.net/authpuppy/trunk/1.0.0-stable/+download/authpuppy-1.0.0-stable.tgz
