@@ -33,7 +33,7 @@ So if you just need to take a quick look at the total bandwidth usage without de
 {% highlight bash %}
 $ nload
 {% endhighlight %}
-nload command linux
+![nload command linux](http://www.binarytides.com/blog/wp-content/uploads/2014/03/nload.png)
 
 Installing Nload – Fedora and Ubuntu have got it in the default repos. CentOS users need to get nload from Epel repositories.
 
@@ -55,7 +55,7 @@ $ sudo iftop -n
 {% endhighlight %}
 The n option prevents iftop from resolving ip addresses to hostname, which causes additional network traffic of its own.
 
-iftop command linux
+![iftop command linux](http://www.binarytides.com/blog/wp-content/uploads/2014/03/iftop.png)
 
 Install iftop – Ubuntu/Debian/Fedora users get it from default repos. CentOS users get it from Epel.
 
@@ -77,7 +77,7 @@ Iptraf is an interactive and colorful IP Lan monitor. It shows individual connec
 {% highlight bash %}
 $ sudo iptraf
 {% endhighlight %}
-iptraf linux command
+![iptraf linux command](http://www.binarytides.com/blog/wp-content/uploads/2014/03/iptraf.png)
 
 Install iptraf
 
@@ -107,7 +107,7 @@ Nethogs is a small ‘net top’ tool that shows the bandwidth used by individua
 $ sudo nethogs
 ```
 
-nethogs command linux
+![nethogs command linux](http://www.binarytides.com/blog/wp-content/uploads/2014/03/nethogs.png)
 
 Install Nethogs – Ubuntu, Debian, Fedora users get from default repos. CentOS users need Epel
 
@@ -127,7 +127,7 @@ $ sudo yum install nethogs -y
 
 Bmon (Bandwidth Monitor) is a tool similar to nload that shows the traffic load over all the network interfaces on the system. The output also consists of a graph and a section with packet level details.
 
-bmon linux network monitor
+![bmon linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/bmon-640x480.png)
 
 Install Bmon – Ubuntu, Debian and Fedora users can install from default repos. CentOS users need to setup repoforge, since its not available in Epel.
 
@@ -153,7 +153,7 @@ Slurm is ‘yet’ another network load monitor that shows device statistics alo
 $ slurm -s -i eth0
 ```
 
-slurm command linux
+![slurm command linux](http://www.binarytides.com/blog/wp-content/uploads/2014/03/slurm.png)
 
 Install slurm
 
@@ -173,7 +173,7 @@ $ sudo yum install slurm -y
 
 Tcptrack is similar to iftop, and uses the pcap library to capture packets and calculate various statistics like the bandwidth used in each connection. It also supports the standard pcap filters that can be used to monitor specific connections.
 
-tcptrack command linux
+![tcptrack command linux](http://www.binarytides.com/blog/wp-content/uploads/2014/03/tcptrack.png)
 
 Install tcptrack – Ubuntu, Debian and Fedora have it in default repos. CentOS users need to get it from RepoForge as it is not available in Epel either.
 
@@ -296,7 +296,7 @@ $ sudo apt-get install bwm-ng
 
 A tiny little simple bandwidth monitor that displays the traffic volume through network interfaces. No further options, just the traffic stats are display and updated in realtime.
 
-cbm linux network monitor
+![cbm linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/cbm.png)
 
 ``` bash
 $ sudo apt-get install cbm
@@ -310,7 +310,7 @@ Another small and simple tool that just draws out good looking graphs of incomin
 $ speedometer -r eth0 -t eth0
 ```
 
-speedometer linux network monitor
+![speedometer linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/speedometer.png)
 
 Install speedometer
 
@@ -328,7 +328,7 @@ Pktstat displays all the active connections in real time, and the speed at which
 $ sudo pktstat -i eth0 -nt
 ```
 
-pktstat linux network monitor
+![pktstat linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/pktstat.png)
 
 ``` bash
 $ sudo apt-get install pktstat
@@ -342,7 +342,7 @@ Netwatch is part of the netdiag collection of tools, and it too displays the con
 $ sudo netwatch -e eth0 -nt
 ```
 
-netwatch linux network monitor
+![netwatch linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/netwatch.png)
 
 ``` bash
 $ sudo apt-get install netdiag
@@ -358,7 +358,7 @@ Monitor only tcp connections
 $ sudo trafshow -i eth0 tcp
 ```
 
-trafshow linux network monitor
+![trafshow linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/trafshow.png)
 
 ``` bash
 $ sudo apt-get install netdiag
@@ -372,7 +372,7 @@ The netload command just displays a small report on the current traffic load, an
 $ netload eth0
 ```
 
-netload linux network monitor
+![netload linux network monitor](http://www.binarytides.com/blog/wp-content/uploads/2014/03/netload.png)
 
 ``` bash
 $ sudo apt-get install netdiag
