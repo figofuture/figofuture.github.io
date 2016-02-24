@@ -89,8 +89,8 @@ $raw = $person->serializeToString();
 echo $raw
 ?>
 {% endhighlight %}
-[Google Protocol Buffers Official Doc][1]
-[php-protocolbuffers wiki][2]
+[Google Protocol Buffers Official Doc][1]  
+[php-protocolbuffers wiki][2]  
 [Protocol Buffers – Google’s data interchange format][3]
 
 [1]: https://developers.google.com/protocol-buffers/
