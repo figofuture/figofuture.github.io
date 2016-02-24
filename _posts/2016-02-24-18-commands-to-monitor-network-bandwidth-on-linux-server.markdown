@@ -24,6 +24,7 @@ Here is a list of the commands, sorted by their features.
 2. Overall bandwidth (batch style output) - vnstat, ifstat, dstat, collectl  
 3. Bandwidth per socket connection - iftop, iptraf, tcptrack, pktstat, netwatch, trafshow  
 4. Bandwidth per process - nethogs
+  
 
 1. Nload
 
@@ -37,11 +38,11 @@ nload command linux
 
 Installing Nload – Fedora and Ubuntu have got it in the default repos. CentOS users need to get nload from Epel repositories.
 
-# fedora or centos
+fedora or centos
 {% highlight bash %}
 $ yum install nload -y
 {% endhighlight %}
-# ubuntu/debian
+ubuntu/debian
 {% highlight bash %}
 $ sudo apt-get install nload
 {% endhighlight %}
@@ -317,11 +318,11 @@ waiting for 0.5 second sample...
 
 Install Collectl
 
-# Ubuntu/Debian users
+Ubuntu/Debian users
 {% highlight bash %}
 $ sudo apt-get install collectl
 {% endhighlight %}
-#Fedora
+Fedora
 {% highlight bash %}
 $ sudo yum install collectl
 {% endhighlight %}
