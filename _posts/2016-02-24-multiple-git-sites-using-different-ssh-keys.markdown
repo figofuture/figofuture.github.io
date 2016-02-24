@@ -6,7 +6,7 @@ date:       2016-02-24
 author:     "figo"
 header-img: ""
 tags:
-    - ssl
+    - ssh
     - git
     - 2016
 ---
