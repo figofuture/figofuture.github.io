@@ -124,13 +124,14 @@ Your MySQL connection id is 45
 Server version: 5.0.51a-3ubuntu5.5 (Ubuntu)
    
 Type 'help;' or '\h' for help. Type '\c' to clear the buffer.
-```mysql   
+``` mysql   
 mysql> create user 'authpuppy'@'localhost' identified by 'authpuppydev';
 Query OK, 0 rows affected (0.21 sec)
    
 mysql> grant all privileges on authpuppy.* to 'authpuppy'@'localhost' with grant option;
-Query OK, 0 rows affected (0.02 sec)
 ```
+Query OK, 0 rows affected (0.02 sec)
+
 You may now navigate to http://<your authpuppy server>/
 
 If the database is not configured yet, the file will be created. A check of requirements will also automatically be made. Make sure all required requirements are met.
