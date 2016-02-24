@@ -11,14 +11,15 @@ tags:
     - mac
     - 2016
 ---
-To squash/unsquash a Linux squashfs filesystem on a Mac, you can build the squashfs tools.
+To squash/unsquash a Linux [squashfs][1] filesystem on a Mac, you can build the squashfs tools.
 
 A few modifications of the source are required for OS X:
 
-The FNM_EXTMATCH flag doesn’t exist in the fnmatch library on OS X. This just means that you can’t use glob patterns with mksquashfs.
-The constants to figure out how many CPUs the machine has are in the sysctl header instead of the sysinfo header.
-The C99 compiler has different semantics for the inline keyword, so inline functions should also be static.
-Instead of llistxattr(), lgetxattr(), lsetxattr(), Apple uses a XATTR_NOFOLLOW flag on the non-link equivalent functions.
+* The FNM_EXTMATCH flag doesn’t exist in the fnmatch library on OS X. This just means that you can’t use glob patterns with mksquashfs.
+* The constants to figure out how many CPUs the machine has are in the sysctl header instead of the sysinfo header.
+* [The C99 compiler has different semantics for the inline keyword][2], so inline functions should also be static.
+* Instead of llistxattr(), lgetxattr(), lsetxattr(), Apple uses a XATTR_NOFOLLOW flag on the non-link equivalent functions.
+
 Here’s a complete download-and-build recipe:
 {% highlight bash %}
 curl -OL http://iweb.dl.sourceforge.net/project/squashfs/squashfs/squashfs4.2/squashfs4.2.tar.gz
@@ -45,7 +46,7 @@ The filesystem you’re unsquashing probably has root-owned files in it, so you�
 
 The limit of open files is somewhat low on a Mac, so you’ll get a bunch of errors if you try to unsquash a whole filesystem:
 
-write_file: failed to create file squashfs-root/path/to/file, because Too many open files
+> write_file: failed to create file squashfs-root/path/to/file, because Too many open files
 
 Just change the limit in the shell before running unsquashfs:
 {% highlight bash %}
@@ -53,3 +54,6 @@ ulimit -n 2000
 sudo unsquashfs filesystem.squashfs
 {% endhighlight %}
 There seems to be a bug when drawing the progress bar that causes Floating point exception, which you can workaround by using the -n flag.
+
+[1]: http://squashfs.sourceforge.net/
+[2]: http://clang.llvm.org/compatibility.html#inline
