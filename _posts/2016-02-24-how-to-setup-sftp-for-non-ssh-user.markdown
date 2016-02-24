@@ -24,24 +24,24 @@ SFTP是指SSH文件传输协议（SSH File Transfer protocol）或安全文件�
 步骤：1 创建组
 {% highlight bash %}
 $ sudo groupadd  sftp_users
-% endhighlight %}
+{% endhighlight %}
 步骤：2 分配附属组(sftp_users)给用户
 
 如果用户在系统上不存在，使用以下命令创建（ 这里给用户指定了一个不能登录的 shell，以防止通过 ssh 登录）：
 {% highlight bash %}
 $ sudo useradd  -G sftp_users  -s /bin/false  guest
 $ sudo passwd guest
-% endhighlight %}
+{% endhighlight %}
 对于已经存在的用户，使用以下usermod命令进行修改：
 {% highlight bash %}
 $ sudo usermod –G sftp_users  -s /bin/false  guest
-% endhighlight %}
+{% endhighlight %}
 注意：如果你想要修改用户的默认主目录，那么可以在useradd和usermod命令中使用‘-d’选项，并设置合适的权限。
 
 步骤：3 现在编辑配置文件 “/etc/ssh/sshd_config”
 {% highlight bash %}
 $ sudo vi /etc/ssh/sshd_config
-% endhighlight %}
+{% endhighlight %}
 {% highlight bash %}
  #comment out the below line and add a line like below
  #Subsystem sftp /usr/libexec/openssh/sftp-server  
@@ -53,7 +53,7 @@ $ sudo vi /etc/ssh/sshd_config
  AllowTcpForwarding no 
  ChrootDirectory %h     
  ForceCommand internal-sftp 
-% endhighlight %}
+{% endhighlight %}
 此处：
 
 Match Group sftp_users – 该参数指定以下的行将仅仅匹配sftp_users组中的用户
@@ -62,18 +62,18 @@ ForceCommand internal-sftp – 该参数强制执行内部sftp，并忽略任何
 重启ssh服务
 {% highlight bash %}
 $ sudo service ssh restart
-% endhighlight %}
+{% endhighlight %}
 步骤：4 设置权限：
 {% highlight bash %}
 $ sudo chmod 755 /home/guest
 $ sudo chown root /home/guest
 $ sudo chgrp -R sftp_users /home/guest
-% endhighlight %}
+{% endhighlight %}
 如果你想要允许guest用户上传文件，那么创建一个上传文件夹，设置权限如下：
 {% highlight bash %}
 $ sudo mkdir /home/guest/upload
 $ sudo chown guest. /home/guest/upload/
-% endhighlight %}
+{% endhighlight %}
 步骤：5 现在尝试访问系统并进行测试
 
 via: http://www.linuxtechi.com/configure-chroot-sftp-in-linux/
