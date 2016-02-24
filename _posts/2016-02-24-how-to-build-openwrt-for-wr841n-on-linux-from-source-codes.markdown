@@ -4,7 +4,7 @@ title:  "How To Build openwrt for WR841N on linux from source codes"
 subtitle:   ""  
 date:       2016-02-24
 author:     "figo"
-header-img: ""
+header-img: "img/openwrt-logo.png"
 tags:
     - linux
     - openwrt
