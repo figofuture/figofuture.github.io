@@ -92,9 +92,9 @@ include fastcgi_params;
 {% endhighlight %}
 check nginx is OK.
 
-Next, download the authpuppy source codes from authpuppy official website
+Next, download the [authpuppy source codes][2] from authpuppy official website
 {% highlight bash %}
-# wget -c [authpuppy-1.0.0-stable.tgz][2]
+# wget -c authpuppy-1.0.0-stable.tgz
 
 # tar xf authpuppy-1.0.0-stable.tgz
 
@@ -137,7 +137,7 @@ mysql> grant all privileges on authpuppy.* to 'authpuppy'@'localhost' with grant
 
 Query OK, 0 rows affected (0.02 sec)
 
-You may now navigate to http://<your authpuppy server>/
+You may now navigate to http://[your authpuppy server]/
 
 If the database is not configured yet, the file will be created. A check of requirements will also automatically be made. Make sure all required requirements are met.
 
