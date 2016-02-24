@@ -5,6 +5,7 @@ subtitle:   ""
 date:       2016-02-24
 author:     "figo"
 header-img: "img/openwrt-logo.png"
+header-mask: 0.9
 tags:
     - linux
     - openwrt
