@@ -25,8 +25,7 @@ Here is a list of the commands, sorted by their features.
 3. Bandwidth per socket connection - iftop, iptraf, tcptrack, pktstat, netwatch, trafshow  
 4. Bandwidth per process - nethogs
   
-
-1. Nload
+1.Nload
 
 Nload is a commandline tool that allows users to monitor the incoming and outgoing traffic separately. It also draws out a graph to indicate the same, the scale of which can be adjusted. Easy and simple to use, and does not support many options.
 
@@ -305,7 +304,6 @@ $ collectl -sn -oT -i0.5
 ```
 
 waiting for 0.5 second sample...
-
 ``` bash
 #         <----------Network---------->
 #Time       KBIn  PktIn  KBOut  PktOut 
@@ -315,7 +313,6 @@ waiting for 0.5 second sample...
 10:32:02       5     42     96      96 
 10:32:03       5     48      3      28
 ```
-
 Install Collectl
 
 Ubuntu/Debian users
