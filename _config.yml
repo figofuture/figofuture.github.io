@@ -123,6 +123,9 @@ friends: [
         title: "App Chunk",
         href:  "http://appchunk.com"
     },{
+        title: "Big Nerd Ranch",
+        href:  "https://www.bignerdranch.com/blog/"
+    },{
         title: "Realm",
         href:  "https://realm.io"
     },{
