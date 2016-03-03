@@ -93,20 +93,23 @@ friends: [
         title: "Trinea",
         href:  "http://www.trinea.cn"
     },{
-       title: "Gracker",
-       href:  "http://androidperformance.com"
+        title: "Gracker",
+        href:  "http://androidperformance.com"
     },{
-       title: "23CODE android经典开源代码分享",
-       href:  "http://www.23code.com"
+        title: "23CODE android经典开源代码分享",
+        href:  "http://www.23code.com"
     },{
-       title: "泡在网上的日子",
-       href:  "http://www.jcodecraeer.com"
+        title: "泡在网上的日子",
+        href:  "http://www.jcodecraeer.com"
     },{
-       title: "V2EX",
-       href:  "http://www.v2ex.com"
+        title: "V2EX",
+        href:  "http://www.v2ex.com"
     },{
-       title: "简书",
-       htrf:  "http://www.jianshu.com"
+        title: "简书",
+        href:  "http://www.jianshu.com"
+    },{
+        title: "Github trending",
+        href:  "https://github.com/trending/java"
     },{
         title: "Jake Wharton",
         href:  "http://jakewharton.com"
