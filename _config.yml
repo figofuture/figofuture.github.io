@@ -111,6 +111,9 @@ friends: [
         title: "Github trending",
         href:  "https://github.com/trending/java"
     },{
+        title: "Engineering at Facebook",
+        href:  "https://code.facebook.com"
+    },{
         title: "Jake Wharton",
         href:  "http://jakewharton.com"
     },{
