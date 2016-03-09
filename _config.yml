@@ -114,6 +114,9 @@ friends: [
         title: "Engineering at Facebook",
         href:  "https://code.facebook.com"
     },{
+        title: "Square Engineering Blog",
+        href:  "https://corner.squareup.com"
+    },{
         title: "Jake Wharton",
         href:  "http://jakewharton.com"
     },{
