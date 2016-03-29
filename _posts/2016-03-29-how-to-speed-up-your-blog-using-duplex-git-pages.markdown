@@ -5,6 +5,8 @@ subtitle:   "写在2016年的第一篇，如何利用国内外双git pages平台
 date:       2016-03-29
 author:     "figotan"
 header-img: "img/header/Wallpaper-2015-12-22.jpg"
+header-mask: 0.5
+catalog: true
 tags:
     - github
     - coding.net
@@ -13,22 +15,22 @@ tags:
     - blog
     - 2016
 ---
-# 问题描述
+## 问题描述
 静态博客托管在github上诚然是一件非常不错的事情，但是github在国内访问速度很慢，而且经常因为违反国内的政策被墙而导致无法访问，所以在国内找一个类似github的代码托管兼静态页面托管平台并采用双托管方式似乎是个不错的解决方案。
 
-# 解决方案
+## 解决方案
 国内有个叫gitcafe的代码托管平台提供了类似github的服务，不过gitcafe已经整合到coding.net，所以国内选择了coding.net作为代码和静态网页的托管。
 国内的静态网页托管问题解决了，但是coding.net有自己的默认域名和绑定域名的方式，如何与github绑定的域名共存呢？也就是对于国内的用户让他们访问coding.net托管的网页；对于海外的用户，让他们访问github托管的网页，而且用户在浏览器上敲下的网址要都是同一个。其实采用CDN的方式可以解决这个问题，但是免费靠谱的CDN资源非常难找，而且也有诸多限制，这里采用了免费的DNSPod服务，可以将国内的dns请求解析到国内的服务器(coding.net)，国外的dns请求解析到国外的服务器(github.com)，有效的解决了问题。
 下面拿本人的博客[http://www.figotan.org](http://www.figotan.org)举例说明如何一步一步解决这个问题。
 
-# 国内代码以及静态网页托管平台－coding.net
+## 国内代码以及静态网页托管平台－coding.net
 访问 [http://www.coding.net](http://www.coding.net)注册账号，记得账号名最好和github的账号名保持一致（不一致其实也没问题）；  
 1. 新建并上传一个SSH公钥，操作过程和github类似；  
 2. 创建Coding Pages，具体流程可以参考[官方文档](https://coding.net/help/doc/pages/index.html)；  
 3. 绑定自定义的网址，如果是主域名访问，比如figotan.org，记得www和非www都需要绑定一下，否则非www的方式，比如http://figotan.org会报404错误；  
 4. 在浏览器里访问[http://figotan.coding.me](http://figotan.coding.me)试试看效果
 
-# DNSPod
+## DNSPod
 采用[DNSPod](https://www.dnspod.cn)提供的智能域名解析服务，可以按国内网络供应商（电信，联通，移动，教育网），地域（国内，国外），搜索引擎（谷歌，百度，搜搜，有道，必应，搜狗，奇虎）等维度对线路类型做域名解析。这样，一个域名可以针对不同的用户群体提供不同的空间与之提供服务。国内的用户访问国内的空间，国外的用户访问国外的空间。  
 下面是具体的操作步骤和注意的问题：  
 1. 注册账号并添加域名；  
@@ -40,9 +42,11 @@ tags:
 5. 查看博客的域名解析信息  
 `$ dig www.figotan.org +nostats +nocomments +nocmd`
 
-## 配置域名纪录的时候需要了解的概念和注意的问题 
-### 关于Host(主机)  
-主机记录就是域名前缀
+## 配置域名
+配置域名纪录的时候需要了解如下一些概念，也需要注意一些问题和坑，避免出现无法访问域名的问题。  
+
+#### 关于Host(主机)  
+主机记录就是域名前缀 
 
 | Host(主机)     | 用法             | 
 |:-------------:|:----------------------------------:|
@@ -50,7 +54,7 @@ tags:
 | @             | 直接解析主域名 figotan.org           |
 | *             | 泛解析，匹配其他所有子域名 *.figotan.org |
 
-### 关于Resord Type(记录类型)  
+#### 关于Resord Type(记录类型)  
 要指向空间商提供的 IP 地址，选择「类型 A」，要指向一个域名，选择「类型 CNAME」
 
 | Resord Type(记录类型)     | 用法             |  Points To(记录值)|
@@ -63,7 +67,7 @@ tags:
 | SRV(Service)             | 记录了哪台计算机提供了哪个服务。格式为：服务的名字、点、协议的类型，例如：_xmpp-server._tcp| 不常用。格式为：优先级、空格、权重、空格、端口、空格、主机名，记录生成后会自动在域名后面补一个“.”，这是正常现象。例如：5 0 5269 xmpp-server.l.google.com.|
 | NS(Name Server)          | 域名服务器记录，如果需要把子域名交给其他DNS服务商解析，就需要添加NS记录| 不常用。系统默认添加的两个NS记录请不要修改。NS向下授权，填写dns域名，例如：f1g1ns1.dnspod.net|
 
-### 关于TTL  
+#### 关于TTL  
 即 Time To Live，缓存的生存时间。指地方dns缓存您域名记录信息的时间，缓存失效后会再次到DNSPod获取记录值。
 
 | TTL     | 用法             | 
@@ -73,7 +77,7 @@ tags:
 | 3600（1小时）             | 如果您IP极少变动（一年几次），建议选择 3600，解析速度快。如果要修改IP，提前一天改为 60，即可快速生效 |
 
 
-# 部署内容
+## 部署内容
 之前的博客是放在github，所以首先从github获取博客最新的代码到本地  
 1. 从github获取代码  
 `git clone git@github.com:figofuture/figofuture.github.io.git`  
@@ -116,7 +120,7 @@ tags:
 4. 推送master内容到github,同步完成  
 `git push origin master`
 
-# 参考资料
+## 参考资料
 [Jekyll自建博客同时托管至 Github 与 Gitcafe](http://www.jianshu.com/p/a96f60d20936)  
 
 [解决百度爬虫无法抓取github pages](http://www.ezlippi.com/blog/2016/02/baidu-spider-forbidden.html)
