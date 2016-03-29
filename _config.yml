@@ -3,9 +3,9 @@ title: KEEP IT G.A.N.G.S.T.A
 SEOTitle: 非戈的博客 | FIGOTAN's Blog
 header-img: img/home-bg.jpg
 email: figofuture@gmail.com
-description: "关于技术与编程、黑客与极客 | 非戈，Tech Lover，APP Developer，Software Researcher | 这里是 @figofuture 的个人博客，与你一起发现的世界。"
+description: "关于技术与编程、黑客与极客 | 非戈，Tech Lover，APP Developer，Software Researcher | 这里是 @figofuture 的个人博客，和您一起看外面的世界。"
 keyword: "figo, 非戈, figofuture, 菲戈, 飞哥, @figofuture, 非戈的博客, Blog, 博客, 个人网站, 互联网, 技术, 运营, 产品, Linux, Android, 安卓, iOS, Gentoo, 极客, Geek"
-url: "http://figotan.org"              # your host, for absolute URL
+url: "http://www.figotan.org"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -24,7 +24,7 @@ facebook_username:  figofuture
 highlighter: rouge
 permalink: pretty
 paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 # Gems
@@ -47,14 +47,14 @@ disqus_username: figofuture
 # Duoshuo settings
 duoshuo_username: figofuture
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: false                     # set to false if you want to use Comment without Sharing
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
 
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 
+ba_track_id: 5ca3b4a871144d40191d580b938bfe34 
 # Google Analytics
 ga_track_id: 'UA-70990229-1'            # Format: UA-xxxxxx-xx
 ga_domain: figotan.org
@@ -63,7 +63,7 @@ ga_domain: figotan.org
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "世界那么大，我一直在路上。读书，撸代码，写文章，玩科技，看世界。"
+sidebar-about-description: "世界那么大，我一直在路上。阅读，撸代码，写文章，玩科技，看世界。"
 sidebar-avatar: /img/avatar-figo.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
