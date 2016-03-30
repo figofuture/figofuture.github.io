@@ -149,7 +149,7 @@ tags:
 示例参考  
 `<?php
 if( $_GET['key'] == 'KEY' ) {
-    echo shell_exec("cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages';ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git push gh-origin coding-pages:master'");
+    echo shell_exec('cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages";ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git push gh-origin coding-pages:master"');
 }
 else {
     header('HTTP/1.1 400 Bad Request');
