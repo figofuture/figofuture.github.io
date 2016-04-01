@@ -171,7 +171,8 @@ HTML;
 `ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; [需要使用ssh方式执行的命令]'`  
 * 从coding触发webhook有一定的失败几率，如果失败，可以手动触发一遍，有两个办法：
     - 在浏览器里直接访问webhook的网址  
-    - 登陆到coding的web后台,在项目的webhook设置的地方点击测试按钮，在发送纪录可以跟踪到发送状态
+    - 登陆到coding的web后台,在项目的webhook设置的地方点击测试按钮，在发送纪录可以跟踪到发送状态  
+
 ## 参考资料
 感谢网络上各路英雄的帮助：
 
