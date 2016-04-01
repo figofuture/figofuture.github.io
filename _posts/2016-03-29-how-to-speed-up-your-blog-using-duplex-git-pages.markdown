@@ -146,8 +146,10 @@ tags:
 `sudo gem install rhc`  
 `rhc setup`  
 `git clone [申请openshift应用分配的git repo地址]`  
-示例参考  
-`<?php
+示例参考
+  
+```php
+<?php
 if( $_GET['key'] == 'KEY' ) {
     echo shell_exec('cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages";ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git push gh-origin coding-pages:master"');
 }
@@ -157,7 +159,8 @@ else {
 // Fallback
 HTML;
 }
-`  
+```
+  
 `git commit && git push`  
 11. 在coding.net项目中设置webhook，记得把**KEY**设置成一串随机的字符串，为了一定的安全性考虑。记得上面步骤中php api源码里的**KEY**和webhook中的**KEY**内容一定要一致。  
 
