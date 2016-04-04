@@ -17,7 +17,7 @@ tags:
 ---
 随着谷歌对Eclipse的无情抛弃和对Android Studio的日趋完善，使用gradle构建Android项目已经成为开发者的一项必会良技。那么，问题来了，采用什么样的姿势才能让项目开发构建过程高潮迭起，精彩不断呢？  
 其实网上有很多关于gradle的文章，gradle官方和谷歌也提供了详细的文档和教程，可素，当你在构建过程中遇到一些问题或者有特殊的爱好（需求）的时候，这些东西未必能帮（mei）上（shen）什（me）么（niao）忙（yong），然后就是一顿翻墙找谷歌蜀黍约约约，去stackoverflow上各种搜刮问大神，最后解决了。即使没有真的解决那么就忍了。  
-![](http://www.figotan.org/img/in-post/gradle-logo.png)  
+![](http://www.figotan.org/img/in-post/gradle-logo.jpg)  
 那怎么行？是可忍孰不可忍，奇技淫巧必须有。所以就会有这样一篇文章，我在这里不讲原理，因为我知道很多人明白辣么多的底层原理，仍然撸不上好代码，做不成好项目，出不了好产品，自然也就过不好这一生咯。  
 我们先从GRADLE构建的时间花销开始谈起。  
 
