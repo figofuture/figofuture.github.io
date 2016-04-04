@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "场景化解锁GRADLE构建姿势"
-subtitle:   "GRADLE构建安卓项目，姿势啥的很重要，结合具体场景，省力又省心，高潮也健康"
+title:  "GRADLE构建最佳实践"
+subtitle:   "用GRADLE构建安卓项目已是大势所趋，具体实战中姿势啥的很重要，结合具体应用场景，最佳实践给你最佳的体验"
 date:       2016-04-01
 author:     "figotan"
 header-img: "img/header/gradle.jpg"
