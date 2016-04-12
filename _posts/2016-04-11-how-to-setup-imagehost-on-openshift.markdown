@@ -69,6 +69,7 @@ tags:
 * 将upload目录下的文件和目录放到[OPENSHIFT_DATA_DIR](https://developers.openshift.com/managing-your-applications/environment-variables.html)下，因为这篇文档里说这个目录是持久化的数据目录，而CF Image Host的upload目录的内容是上传文件后生成的，需要写权限，而且需要持久化，所以放在这里最合适  
 * 将原本保存在inc/set.php里的设置数据转移到OPENSHIFT_DATA_DIR/upload下，并改写CF Image Host里所有引用set.php的地方，因为这个文件同样需要写权限以及持久化，所以放在OPENSHIFT_DATA_DIR下  
 * 因为install目录随代码一起签入了远程git仓库，所以删除操作也变得不方便，需要修改代码之后再签入，所以为了节省这一步，增加了.installed文件用于判断系统是否安装，如果部署完系统后安装成功，则写入.installed，index.php里判断是否存在.installed，如果存在表示已经安装过，直接进图床主界面，如果没有这个文件表示没有安装，则跳转到install引导界面
+* 修复了原来代码中REMOTE上传失败的问题。原因是原来的代码中,本地和远程上传共用同一段逻辑，但是逻辑处理错误，而且利用curl下载远程上传的文件后并没有获取到mine类型和大小，也导致了上传失败。
 
 我觉得我说清楚了，所以不贴代码，我将坚持写文字，尽量不贴代码，想看代码直接去github或者gitlab
 
