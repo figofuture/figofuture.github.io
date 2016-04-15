@@ -42,7 +42,7 @@ tags:
 部署到服务器的时候有一步是需要把ghost做成一个后台服务，让它跟着linux系统一起看日出看日落。官方也给出了具体的[实施方案](http://support.ghost.org/deploying-ghost/)，比如用[Forever](https://npmjs.org/package/forever)和[PM2](https://github.com/Unitech/pm2),还可以用[Supervisor](http://supervisord.org/)，但是，这三种方式有额外的步骤和配置，又是一个折腾的过程。最后，官方给出了可以直接写Init Script的方式，一种最原始的配置系统后台服务的办法，那么，问题来了，官方只给了[最流行的linux发行版的初始化脚本参考](https://github.com/TryGhost/Ghost-Config/blob/master/init.d/ghost)，并没有给出gentoo的。  
 而gentoo，用的init script内容和ubuntu,centos之类的差异，所以我开始折腾  
 关于gentoo的initscripts，[详细的文档](https://wiki.gentoo.org/wiki/Handbook:X86/Working/Initscripts)  
-![](https://wiki.gentoo.org/images/f/fa/Gentoo3-616x123.png)  
+![](http://b54.in/anjt)  
 说说和ubuntu的差异
 
 * 使用的sh为```#!/sbin/runscript```而不是```#! /bin/sh```
@@ -134,12 +134,15 @@ reload() {
 gentoo的init script和ubuntu，centos的区别是有的，大小自己看，反正不修改是用不起来的；  
 既然选择了gentoo,就一直用下去，至少gentoo逼LFS好的地方是，它至少有一套完整的系统软件在为这个系统服务，比如emerge包管理软件和portage软件仓库；  
 既然选择了装逼，就不要怕折腾  
-> Play or Die  
-> Compiling forever more than 10 years
-> 
 
+> Play or Die  
+  Compiling forever more than 10 years
+ 
 ## 鸣谢
 [LFS](http://www.linuxfromscratch.org)  
+
 [Gentoo](https://www.gentoo.org)  
+
 [Node.js](https://nodejs.org)  
+
 [Ghost](https://ghost.org)  
