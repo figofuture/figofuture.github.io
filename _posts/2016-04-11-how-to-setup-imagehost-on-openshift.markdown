@@ -8,11 +8,11 @@ header-img: "img/header/20160411.jpg"
 header-mask: 0.5
 catalog: true
 tags:
-    - openshift
-    - cfimagehost
-    - php
+    - Openshift
+    - CFImageHost
+    - PHP
     - 图床
-    - blog
+    - Blog
     - 2016
 ---
 
@@ -27,7 +27,7 @@ tags:
 * 托管在微博
 * 托管在第三方的图床里
 * 托管在公有云存储中
-* 托管在自己的VPS中，或者自己租用的服务器上，需要自己搭建服务，比如owncloud之类，或者自己编写图片管理平台系统
+* 托管在自己的VPS中，或者自己租用的服务器上，需要自己搭建服务，比如Owncloud之类，或者自己编写图片管理平台系统
 * 自己利用免费的PAAS平台，搭建专属自己的图床
 
 以上任何一种方式或者几种方式自由组合都可以满足一般的需求，或者全上都可以。
@@ -44,34 +44,35 @@ tags:
 抱歉，我这里并不想给谁谁谁家的图床打广告，所以不列举哪家的靠谱不靠谱。总的来说，应该是靠谱的，不过谷歌也经常关闭它家不赚钱的服务的，所以继续看咯。
 
 ## 托管在公有云存储
-其实这个和上个类似，比如放在dropbox，七牛等等等等，你还得考虑国内能不能用，访问速度如何？收费如何？稳定性如何？想来想去，还是自己做吧。
+其实这个和上个类似，比如放在Dropbox，七牛等等等等，你还得考虑国内能不能用，访问速度如何？收费如何？稳定性如何？想来想去，还是自己做吧。
 
 ## 自己做
-托管在自己的VPS中，或者自己租用的服务器上，需要自己搭建服务，比如owncloud之类，或者自己编写图片管理平台系统。owncloud是不错，可惜引用不方便，你要做的是登录，上传图，获取分享链接，然后贴到文章里，好繁琐的。那么自己做一个呢？时间和人力成本来了。以前看过一篇文章讲一个产品经理如何做了一个多么牛逼的图床产品，各种好，可惜不开源。好了，下面我告诉你如何做一个简单够用的图床，恩，其实已经做好了，你要做的只是部署而已。
+托管在自己的VPS中，或者自己租用的服务器上，需要自己搭建服务，比如Owncloud之类，或者自己编写图片管理平台系统。Owncloud是不错，可惜引用不方便，你要做的是登录，上传图，获取分享链接，然后贴到文章里，好繁琐的。那么自己做一个呢？时间和人力成本来了。以前看过一篇文章讲一个产品经理如何做了一个多么牛逼的图床产品，各种好，可惜不开源。好了，下面我告诉你如何做一个简单够用的图床，恩，其实已经做好了，你要做的只是部署而已。
 
 ## 如何拥有一个专属自己的图床
 当然，如果你想分享自己的图床给别人也是可以的，专属只是为了区别微博大锅饭而已。言归正传，第一步是服务器选型。
 
 #### 服务器选型
-我是不会阻止你购买Amazon S3，Digital Ocean, Vultr, Linode, 阿里云，＊AE的，花钱可以节省时间，没错，同样，我也会告诉你不花钱的时候，也可以节省时间，比如用RED HAT旗下的[OPENSHIFT](https://www.openshift.com)。关于注册和安装不多说，只捡几个需要重点注意的坑说下：  
-1. 记得本地生成ssh公钥私钥，并将公钥传到openshift平台  
-2.  用rhc客户端访问注册的服务确实比较方便，记得rhc是ruby编写的，所以得先安装ruby的环境   
+我是不会阻止你购买Amazon S3，Digital Ocean, Vultr, Linode, 阿里云，＊AE的，花钱可以节省时间，没错，同样，我也会告诉你不花钱的时候，也可以节省时间，比如用RED HAT旗下的[Openshift](https://www.openshift.com)。关于注册和安装不多说，只捡几个需要重点注意的坑说下：  
+1. 记得本地生成ssh公钥私钥，并将公钥传到Openshift平台  
+2.  用rhc客户端访问注册的服务确实比较方便，记得rhc是Ruby编写的，所以得先安装Ruby的环境   
 3. 因为图床选用的是PHP，所以建议注册一个基于PHP开发环境的服务  
 4. 每个单独的服务(学名gear)拥有1G的免费空间，所以省着点用吧，个人拍脑袋感觉写博客够用了，如果是P(拍)H(黄)P(片)真心是不够的  
 
 #### 图床／云存储选型
-可选的说多也不多，比如上github搜索，也许会找出一大把，实在不行就用owncloud，openshift原生支持owncloud，不过笔者选用的是这个[CF Image Host](http://codefuture.co.uk/projects/imagehost/)，why? 因为它足够简单，所以好改造；基本功能齐全，操作简单，满足需求。  
-你可以拿它的代码改造后部署到openshift，也可以直接用[**我改造过的**](https://github.com/figofuture/cfimagehost-on-openshift)
+可选的说多也不多，比如上Github搜索，也许会找出一大把，实在不行就用Owncloud，Openshift原生支持Owncloud，不过笔者选用的是这个[CF Image Host](http://codefuture.co.uk/projects/imagehost/)，why? 因为它足够简单，所以好改造；基本功能齐全，操作简单，满足需求。  
+你可以拿它的代码自己改造后部署到Openshift，也可以直接用[**我改造过的**](https://github.com/figofuture/cfimagehost-on-openshift)
 
 #### 我做了啥
 叨逼叨逼这么多，我觉得最后才是重点，我说说我做了啥吧  
 
-* 将upload目录下的文件和目录放到[OPENSHIFT_DATA_DIR](https://developers.openshift.com/managing-your-applications/environment-variables.html)下，因为这篇文档里说这个目录是持久化的数据目录，而CF Image Host的upload目录的内容是上传文件后生成的，需要写权限，而且需要持久化，所以放在这里最合适  
-* 将原本保存在inc/set.php里的设置数据转移到OPENSHIFT_DATA_DIR/upload下，并改写CF Image Host里所有引用set.php的地方，因为这个文件同样需要写权限以及持久化，所以放在OPENSHIFT_DATA_DIR下  
-* 因为install目录随代码一起签入了远程git仓库，所以删除操作也变得不方便，需要修改代码之后再签入，所以为了节省这一步，增加了.installed文件用于判断系统是否安装，如果部署完系统后安装成功，则写入.installed，index.php里判断是否存在.installed，如果存在表示已经安装过，直接进图床主界面，如果没有这个文件表示没有安装，则跳转到install引导界面
-* 修复了原来代码中REMOTE上传失败的问题。原因是原来的代码中,本地和远程上传共用同一段逻辑，但是逻辑处理错误，而且利用curl下载远程上传的文件后并没有获取到mine类型和大小，也导致了上传失败。
+* 将upload目录下的文件和目录放到[OPENSHIFT_DATA_DIR](https://developers.openshift.com/managing-your-applications/environment-variables.html)下，因为这篇文档里说这个目录是持久化的数据目录，而CF Image Host的upload目录的内容是上传文件后生成的，需要写权限，而且需要持久化，所以放在这里最合适。  
+* 将原本保存在inc/set.php里的设置数据转移到OPENSHIFT_DATA_DIR/upload下，并改写CF Image Host里所有引用set.php的地方，因为这个文件同样需要写权限以及持久化，所以放在OPENSHIFT_DATA_DIR下。  
+* 因为install目录随代码一起签入了远程git仓库，所以删除操作也变得不方便，需要修改代码之后再签入，所以为了节省这一步，增加了.installed文件用于判断系统是否安装，如果部署完系统后安装成功，则写入.installed，index.php里判断是否存在.installed，如果存在表示已经安装过，直接进图床主界面，如果没有这个文件表示没有安装，则跳转到install引导界面。  
+* 修复了原来代码中REMOTE上传失败的问题。原因是原来的代码中,本地和远程上传共用同一段逻辑，但是逻辑处理错误，而且利用curl下载远程上传的文件后并没有获取到mine类型和大小，也导致了上传失败。  
+* 增加了百度统计，原来的CF Image Host是老外做的，所以只支持Google Analytics而且代码很旧了，我升级了GA的统计代码，顺便加上了百度统计，方便查看国内用户的访问数据。  
 
-我觉得我说清楚了，所以不贴代码，我将坚持写文字，尽量不贴代码，想看代码直接去github或者gitlab
+我觉得我说清楚了，所以不贴代码，我将坚持写文字，尽量不贴代码，想看代码直接去Github或者Gitlab
 
 ## 总结
 简单的说，如果你觉的各种微博，第三方的各种托管图床你觉的不靠谱不过瘾的话，那么就自己来吧，[我这里给你一个虽然做得不咋的但是可以用的参考](https://github.com/figofuture/cfimagehost-on-openshift)，欢迎各种拍以及PR。
@@ -79,6 +80,17 @@ tags:
 ## 最后
 鸡冻的等待merge中，以及献上我的图床效果  
 ![](http://php-figotan.rhcloud.com/image.php?di=O4UB)
+
+什么，竟然访问不了！擦，原来是**Openshift悲剧的被墙了！被墙了！被墙了！被墙了！**重要的事情不止说三遍。  
+所以，如果你选用Openshift做为图床的话，**需要解决被墙的问题**。  
+我这里的参考答案是：  
+
+1. 不要使用Openshift自动分配的域名，而是去Openshift web portal将提供图床服务的gear绑定为国内可以访问的域名
+2. 到域名供应商的后台配置中设置CNAME  
+
+再看看效果
+![](http://images.figotan.org/image.php?di=O4UB)
+
 ## 感谢中
-没有感谢，感谢在等待大家的PR，所以我留空了
+目前没有感谢，感谢在等待大家的PR，所以我留空了
 
