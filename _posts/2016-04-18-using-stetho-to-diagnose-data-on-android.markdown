@@ -4,7 +4,7 @@ title:  "如何给安卓APP安装听诊器,检查数据问题"
 subtitle:   "我想看看安卓APP运行过程中的网络访问和数据存储情况，调试太麻烦，日志也挺烦，有没有更好的办法呢？Facebook给广大开发者传了福音，带了福利，放在下午茶的小桌子上，美食干货不敢独吞，所以拿来分享给大家"
 date:       2016-04-18
 author:     "figotan"
-header-img: "img/header/20160418.jpg"
+header-img: "img/header/20160418.png"
 header-mask: 0.5
 catalog: true
 tags:
