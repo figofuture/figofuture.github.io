@@ -13,6 +13,7 @@ tags:
     - Android
     - Facebook
     - Blog
+    - Chrome
     - 2016
 ---
 

@@ -1,14 +1,17 @@
 ---
 layout:     post
 title:      "JAVA decompiler collections"
-subtitle:   ""  
+subtitle:   "JAVA decompiler collections"  
 date:       2015-11-24
 author:     "figo"
-header-img: ""
+header-img: "img/header/20151124.jpg"
+header-mask: 0.5
+catalog: true
 tags:
     - Java
     - decompiler
     - jad
+    - jadx
     - 2015
 ---
 
@@ -87,4 +90,8 @@ The browser supports multiple formats including libraries (.dex, .aar, .so), exe
 [11]: https://github.com/google/android-classyshark
 [12]: http://www.api-solutions.com/p/classyshark_6.html
 
-Please, use it only for legitimate purposes.
+**Please, use it only for legitimate purposes.**
+
+# References
+
+[Decompilers online](http://www.javadecompilers.com)
