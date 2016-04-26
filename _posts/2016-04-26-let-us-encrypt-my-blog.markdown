@@ -17,7 +17,7 @@ tags:
     - 2016
 ---
 
-#首次生成证书
+# 首次生成证书
 ![](https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg)  
 从Github签出[Let’s Encrypt](https://github.com/letsencrypt/letsencrypt)的源代码
 
@@ -64,7 +64,7 @@ Let’s Encrypt提供多种认证方式，因为之前在VPS上有了HTTP的网�
 
 一般情况下**fullchain.pem**和**privkey.pem**就够用了
 
-#Web服务端配置
+# Web服务端配置
 采用的[Nginx](http://nginx.org)做的Web服务器，所以这里贴下我的服务端配置
 
 因为同一个VPS上放置了多个站点，所以Nginx采用vhost的方式，将主域名以及子域名的Nginx配置文件单独编写，并放置在**/etc/nginx/sites-available/**下，如果哪个网站启用，则在/etc/nginx/sites-enabled/下创建**/etc/nginx/sites-available/**对应目录的软链接。这一套原本是Ubuntu发行版里面Nginx的默认配置，个人觉得不错，所以照搬到Gentoo里使用。
@@ -161,7 +161,7 @@ location ~ \.php$ {
 * 如果CONFIG_PROTECT="-*"表示取消配置文件保护
 * 如果想让所有的配置文件都被保护，则应该这样写CONFIG_PROTECT="*"
 
-#更新证书
+# 更新证书
 Let’s Encrypt证书的默认有效期只有**90**天，所以需要定时更新服务端的证书避免过期
 
 一条命令更新所有服务端的证书
@@ -189,21 +189,21 @@ sudo vi /etc/cron.monthly/letsencrypt_renew
 sudo chmod a+x /etc/cron.monthly/letsencrypt_renew
 ```
 
-#撤销证书
+# 撤销证书
 如果想收回(撤销)颁发给服务端的证书，可以使用如下命令
 
 ```bash
 ./letsencrypt-auto revoke --cert-path /etc/letsencrypt/live/subdomain.your_main_domain.com/cert.pem
 ```
 
-#在线HTTPS配置检查
+# 在线HTTPS配置检查
 可以使用[Jerry Qu](https://imququ.com)推荐的两个在线HTTPS配置扫描服务来检查你的网站HTTPS配置的问题，并根据建议做相应的修复。  
 ![](https://ssllabs.com/images/qualys-ssl-labs-logo.png)  
 [Qualys SSL Labs's SSL Server Test](https://www.ssllabs.com/ssltest/index.html)  
 
 [HTTP Security Report](https://httpsecurityreport.com)  
 
-#参考资料
+# 参考资料
 [Let’s Encrypt官网](https://letsencrypt.org/)  
 [Let's Encrypt，免费好用的 HTTPS 证书](https://imququ.com/post/letsencrypt-certificate.html)  
 [LetsEncrypt SSL 证书签发(Nginx)](https://ixiaozhi.com/lets-encrypt-ssl-use-on-nginx/)  
