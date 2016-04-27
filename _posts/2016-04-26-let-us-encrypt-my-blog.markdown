@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "使用Let’s Encrypt给网站穿上HTTPS的铠甲"
-subtitle:   ""
+title:  "Let’s Encrypt给你的网站穿上HTTPS的铠甲，防止http劫持"
+subtitle:   "如何有效的防止你的博客／网站被http劫持，被嵌入各种垃圾广告"
 date:       2016-04-26
 author:     "figotan"
 header-img: "img/header/20160426.png"
@@ -9,13 +9,58 @@ header-mask: 0.5
 catalog: true
 tags:
     - letsencrypt
-    - gitlab
+    - http hijacking
     - https
     - ssl
     - gentoo
     - nginx
     - 2016
 ---
+
+# 一切从劫持开始说起
+在家上网浏览网页，第一次打开浏览器，输入网址，回车，发现页面右下角会出现一个大概300x300（像素）左右大小的正方形小窗口。窗口内多半是一些此时此刻非常不愿意看到的内容，比如广告。咦，我访问的明明是某知名搜索引擎啊，按常理来说这个位置不应该出现这样一个和页面布局极其不搭的小窗口的，是不是我中毒了？  
+自己运营了一个博客，放到公网分享内容给大家，流量还不错，可是留言区老有用户说我乱打小广告。我不信，打开浏览器访问了下自己的博客，怎么搞的？我的主页面上下左右被嵌入各种无耻下流肮脏邪恶小广告，而且与我发布的内容极其不和谐，有些弹窗甚至挡住了重要的内容，可是我明明没有接入任何广告啊？  
+如果遇到如上两种情况，那么恭喜你，你被**http劫持**了！！！
+
+> 在用户的客户端与其要访问的服务器经过网络协议协调后，二者之间建立了一条专用的数据通道，用户端程序在系统中开放指定网络端口用于接收数据报文，服务器端将全部数据按指定网络协议规则进行分解打包，形成连续数据报文。  
+用户端接收到全部报文后，按照协议标准来解包组合获得完整的网络数据。其中传输过程中的每一个数据包都有特定的标签，表示其来源、携带的数据属性以及要到何处，所有的数据包经过网络路径中ISP的路由器传输接力后，最终到达目的地，也就是客户端。  
+HTTP劫持是在使用者与其目的网络服务所建立的专用数据通道中，监视特定数据信息，提示当满足设定的条件时，就会在正常的数据流中插入精心设计的网络数据报文，目的是让用户端程序解释“错误”的数据，并以弹出新窗口的形式在使用者界面展示宣传性广告或者直接显示某网站的内容。
+
+以上内容摘自[百度百科：http劫持](http://baike.baidu.com/view/4926672.htm)
+
+如果你去搜索引擎查找问题和答案，通常会找到如下关键词：
+
+* 运营商劫持广告
+* 运营商http劫持
+* http劫持
+* 电信劫持广告
+* 电信劫持
+* 电信网页劫持
+* 电信http劫持
+* 内容劫持
+* ISP hijacking
+
+有人说这是天朝特有的，那是因为你只活在天朝，难道国外就没有了吗？劫持技术是通用的。
+
+看看如何防范
+
+* 对于开篇说的第一种场景，[月光博客](http://www.williamlong.info)里提到了一篇从[用户的角度的解决方案](http://www.williamlong.info/archives/4181.html)
+* 对于广大网站主（博主）来说，全站**https**化是一种防止**http劫持**的有效方法
+
+这里我们不具体聊https的原理了，就说说如何用免费的**[Let’s Encrypt]((https://letsencrypt.org/))**来具体实践如何将你的站点https化。
+
+# Let's Encrypt
+[Let's Encrypt]((https://letsencrypt.org/))是由EFF、Mozilla、Cisco、Akamai、IdenTrust与密西根大学研究人员共同创立的免费的凭证中心，目的在于推动全球所有的网站都使用HTTPS加密传输，并由非营利的网际网路安全研究组织Internet Security Research Group(ISRG)负责营运。
+这个组织的主要原则是：
+
+* 免费：任何域名所有者都可以零费用申请到一个针对其域名的有效证书。
+* 自动：整个证书注册过程在服务器安装或配置过程中可以简单实现，而更新过程更是可以在后台自动执行。
+* 安全：Let’s Encrypt 将会提供业界最新的安全技术和最好的实践。
+* 透明：所有关于证书发放、撤销的记录都会向任何需要调查的人员开放。
+* 开放：自动化执行的发放和更新协议将会是开放标准，软件也尽可能使用开源软件。
+* 合作：与现有的互联网协议本身很相似，Let’s Encrypt 是一个对整个社区都有益的联合行动，不由任何一个组织控制。
+
+下面聊聊具体的实践故事
 
 # 首次生成证书
 ![](https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg)  
@@ -212,3 +257,4 @@ sudo chmod a+x /etc/cron.monthly/letsencrypt_renew
 [免费SSL证书Let’s Encrypt安装使用教程:Apache和Nginx配置SSL](http://www.freehao123.com/lets-encrypt/)  
 [LET’S ENCRYPT免费SSL证书申请过程](http://www.cmsky.com/lets-encrypt-ssl/)  
 [Ghost Blog启用HTTPS使用LetsEncrypt SSL证书](https://yuan.ga/ghost-blog-enable-https-use-letsencrypt-ssl-certificates/)  
+[Using Free SSL/TLS Certificates from Let’s Encrypt with NGINX](https://www.nginx.com/blog/free-certificates-lets-encrypt-and-nginx/)  
