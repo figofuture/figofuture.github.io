@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "做自己的科学上网，让别人羡慕去吧"
-subtitle:   ""
+subtitle:   "科学上网是如何上网学科学的第一步，翻出去，看更大的世界，学更多的知识，了解更多的文化，开阔更广袤的技术视野。笔者总结和实践了一些自己搭建VPN的经验和经历，分享给大家。"
 date:       2016-05-04
 author:     "figotan"
-header-img: "img/header/20160504.png"
+header-img: "img/header/20160504.jpg"
 header-mask: 0.5
 catalog: true
 tags:
