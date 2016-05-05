@@ -1,3 +1,3 @@
-# figotan's homepage
-http://www.figotan.org
+
+[figotan's homepage](http://www.figotan.org)
 
