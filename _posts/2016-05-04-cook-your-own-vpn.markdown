@@ -461,6 +461,9 @@ MAC OS X/iOS 客户端配置，虽然MAC OS X EI Capitan(10.11.4)和iOS 9的系�
 #### gfw.press
 [GFW.Press](https://github.com/chinashiyu/gfw.press)
 
+#### 谷歌镜像
+[谷歌镜像](https://kuaiguge.com)
+
 # 怀念下曾经的翻墙利器
 GoAgent以及所有曾经借助Google App Engine服务翻墙的工具们，毁誉参半吧，实在不好说！  
 自由门，涉及政治问题，实在不便说！  
