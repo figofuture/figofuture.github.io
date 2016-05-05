@@ -126,12 +126,12 @@ tags:
 
 #### 自动化部署方案
 如果以上方法你觉得麻烦，其实还有一种自动化的repo同步方案，详见[利用webhook自动同步不同repo之间的代码](https://www.ze3kr.com/2015/08/github-sync-to-gitcafe/)  
-这里整理如下：  
+这里笔者做了一些整理和注意的坑，如下：  
 1. 注册[openshift](https://www.openshift.com)；  
-2. 添加一个应用，根据熟悉的语言选择平台，这里选5.4，设置域名和应用名；  
+2. 添加一个应用，根据熟悉的语言选择平台，这里选PHP5.4，设置域名和应用名。也可以使用OpenShift提供的客户端工具(rhc)来创建应用，具体的使用可以参考[OpenShift的官方文档](https://developers.openshift.com/getting-started/osx.html)；  
 3. 本地生成ssh公钥私钥，将公钥导入注册的应用；  
 4. ssh访问应用；  
-5. 在openshift的应用上生成ssh公钥私钥，注意~/.ssh/下无写权限，所以将公钥私钥生成到$OPENSHIFT_DATA_DIR目录下；  
+5. 在openshift的应用上生成ssh公钥私钥，注意~/.ssh/下无写权限，所以将公钥私钥生成到**$OPENSHIFT_DATA_DIR**目录下；  
 6. 将公钥分别导入到[github](https://github.com)和[coding](https://coding.net)的账户下；  
 7. 从coding签出最新的代码  
 `cd $OPENSHIFT_DATA_DIR`  
@@ -143,13 +143,16 @@ tags:
 9. 添加github远程代码仓库  
 `git remote add gh-origin git@github.com:figofuture/figofuture.github.io.git`  
 10. 编写php api接口并部署  
-`sudo gem install rhc`  
-`rhc setup`  
-`git clone [申请openshift应用分配的git repo地址]`  
-示例参考  
-`<?php
+安装OpenShift客户端工具rhc，rhc是用ruby编写，所以安装前请先安装ruby的开发环境`sudo gem install rhc`  
+输入OpenShift用户名和密码 `rhc setup`  
+获取应用对应的git地址 `rhc app show [前面步骤申请的openshift应用名称]`  
+签出代码 `git clone [申请openshift应用分配的git repo地址]`  
+示例参考
+  
+```php
+<?php
 if( $_GET['key'] == 'KEY' ) {
-    echo shell_exec("cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages';ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git push gh-origin coding-pages:master'");
+    echo shell_exec('cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages";ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git push gh-origin coding-pages:master"');
 }
 else {
     header('HTTP/1.1 400 Bad Request');
@@ -157,9 +160,18 @@ else {
 // Fallback
 HTML;
 }
-`  
-`git commit && git push`  
+```
+  
+提交推送后OpenShift自动部署 `git commit && git push`  
 11. 在coding.net项目中设置webhook，记得把**KEY**设置成一串随机的字符串，为了一定的安全性考虑。记得上面步骤中php api源码里的**KEY**和webhook中的**KEY**内容一定要一致。  
+
+**注意的坑**  
+
+* 因为在openshift里用户主目录下的.ssh只读不可写，所以只能在其他地方生成ssh公钥私钥，推荐在**$OPENSHIFT_DATA_DIR**目录下，这样，用git获取github或者coding上的代码就需要采用如下这种形式：  
+`ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; [需要使用ssh方式执行的命令]'`  
+* 从coding触发webhook有一定的失败几率，如果失败，可以手动触发一遍，有两个办法：
+    - 在浏览器里直接访问webhook的网址  
+    - 登陆到coding的web后台,在项目的webhook设置的地方点击测试按钮，在发送纪录可以跟踪到发送状态  
 
 ## 参考资料
 感谢网络上各路英雄的帮助：
