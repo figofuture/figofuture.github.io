@@ -3,6 +3,7 @@ image: ruby:2.1             # the script will run in Ruby 2.1 using the Docker i
 pages:                      # the build job must be named pages
   script:
   - gem install jekyll      # we install jekyll
+  - gem install jekyll-paginate
   - jekyll build -d public/ # we tell jekyll to build the site for us
   artifacts:
     paths:
