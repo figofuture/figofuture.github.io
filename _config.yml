@@ -1,0 +1,155 @@
+# Site settings
+title: KEEP IT G.A.N.G.S.T.A
+SEOTitle: 非戈的博客 | FIGOTAN's Blog
+header-img: img/home-bg.jpg
+email: figofuture@gmail.com
+description: "关于技术与编程、黑客与极客 | 非戈，Tech Lover，APP Developer，Software Researcher | 这里是 @figofuture 的个人博客，和您一起看外面的世界。"
+keyword: "figo, 非戈, figofuture, 菲戈, 飞哥, @figofuture, 非戈的博客, Blog, 博客, 个人网站, 互联网, 技术, 运营, 产品, Linux, Android, 安卓, iOS, Gentoo, 极客, Geek"
+url: "http://www.figotan.org"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+
+# SNS settings
+RSS: false
+weibo_username:     figofuture
+zhihu_username:     figofuture
+github_username:    figofuture
+twitter_username:   figofuture
+facebook_username:  figofuture
+
+
+
+# Build settings
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+disqus_username: figofuture
+
+# Duoshuo settings
+duoshuo_username: 
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: false                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 5ca3b4a871144d40191d580b938bfe34 
+# Google Analytics
+ga_track_id: 'UA-70990229-1'            # Format: UA-xxxxxx-xx
+ga_domain: figotan.org
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "世界那么大，我一直在路上。阅读，撸代码，写文章，玩科技，看世界。"
+sidebar-avatar: /img/avatar-figo.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Friends
+friends: [
+    {
+        title: "安卓开发工具汇总",
+        href:  "http://www.androiddevtools.cn"
+    },{
+        title: "稀土掘金",
+        href:  "http://gold.xitu.io"
+    },{
+        title: "开发技术前线",
+        href:  "http://www.devtf.cn"
+    },{
+        title: "脉脉不得语的技术博客",
+        href:  "http://www.inferjay.com"
+    },{
+        title: "codeKK Android 开源项目集合",
+        href:  "http://www.codekk.com"
+    },{
+        title: "Trinea",
+        href:  "http://www.trinea.cn"
+    },{
+        title: "Gracker",
+        href:  "http://androidperformance.com"
+    },{
+        title: "23CODE android经典开源代码分享",
+        href:  "http://www.23code.com"
+    },{
+        title: "泡在网上的日子",
+        href:  "http://www.jcodecraeer.com"
+    },{
+        title: "V2EX",
+        href:  "http://www.v2ex.com"
+    },{
+        title: "简书",
+        href:  "http://www.jianshu.com"
+    },{
+        title: "Github trending",
+        href:  "https://github.com/trending/java"
+    },{
+        title: "Engineering at Facebook",
+        href:  "https://code.facebook.com"
+    },{
+        title: "Square Engineering Blog",
+        href:  "https://corner.squareup.com"
+    },{
+        title: "NimbleDroid Blog",
+        href:  "http://blog.nimbledroid.com"
+    },{
+        title: "Jake Wharton",
+        href:  "http://jakewharton.com"
+    },{
+        title: "Cyril Mottier",
+        href:  "http://cyrilmottier.com"
+    },{
+        title: "Fernando Cejas",
+        href:  "http://fernandocejas.com"
+    },{
+        title: "Mehdi Sakout",
+        href:  "http://medyo.github.io"
+    },{
+        title: "Yet Another Coder's Blog",
+        href:  "http://blog.egorand.me"
+    },{
+        title: "App Chunk",
+        href:  "http://appchunk.com"
+    },{
+        title: "Big Nerd Ranch",
+        href:  "https://www.bignerdranch.com/blog/"
+    },{
+        title: "Realm",
+        href:  "https://realm.io"
+    },{
+        title: "ReactiveX",
+        href:  "http://reactivex.io"
+    },{
+        title: "FlatBuffers",
+        href:  "http://google.github.io/flatbuffers/"
+    }
+]
