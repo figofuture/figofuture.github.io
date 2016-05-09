@@ -7,6 +7,7 @@ author:     "figotan"
 header-img: "img/header/20160504.jpg"
 header-mask: 0.5
 catalog: true
+published: false
 tags:
     - github
     - gitlab
