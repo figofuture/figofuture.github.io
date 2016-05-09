@@ -458,9 +458,138 @@ MAC OS X/iOS 客户端配置，虽然MAC OS X EI Capitan(10.11.4)和iOS 9的系�
 
 最大的区别是签名证书是请大家公认的权威机构签发，且所有客户端都认同这个证书；而自签名证书是自己签发给自己的，其他客户端都不会认同这个证书（客户端浏览器会提示用户手工确认是否认同这个证书）。  
 
+# 签名证书方式
 签名证书可以花钱购买，也可以采用Let's Encrypt方案，具体可以参考这两篇博客：[用 Let‘s Encrypt 证书搭建 IKEv2 VPN](http://blog.zorro.im/posts/strongswan-ikev2-for-ios-with-letsencrypt.html)和[Strongswan on Ubuntu 16.04 for iOS 9 Client](http://dcamero.azurewebsites.net/strongswan-ubuntu-1604-ios-9.html)  
-签名证书需要有域名，如果VPN服务器还没有绑定域名，那么，如果用证书的方式，只有采用自签名证书啦。这篇文章[如何在 VPS 上搭建 VPN 来翻墙](http://www.jianshu.com/p/2f51144c35c9)里提到了用文章[iOS8 不越狱翻墙方案](https://songchenwen.com/tech/2014/10/13/cross-fire-wall-on-ios8/)的脚本来创建服务端和客户端的证书，这篇提到了参考[Setup IKEv2 On Demand VPN on iOS 8 and IKEv2, IKEv1 Cisco IPSec VPN with Strongswan](https://maoxian.de/2014/10/1220.html)的内容，同时，这篇文章[IPSEC VPN on Ubuntu 15.04 with StrongSwan](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html#Certificates)在证书的生成部分参考了[strongSwan 5: How to create your own private VPN](https://www.zeitgeist.se/2013/11/22/strongswan-howto-create-your-own-vpn/)  
 
+#### 使用Let's Encrypt提供的免费签名证书
+关于Let's Encrypt，这里不多说，详细内容可以参考我之前的博客文章介绍。因为[Let's Encrypt目前不支持给IP地址做签名](https://community.letsencrypt.org/t/certificate-for-public-ip-without-domain-name/6082)，所以这种方案的前提是你必须先申请一个域名。如果没有域名，请跳过这种方式，使用**自签名证书方式**。
+
+登录到你的VPS，从Github签出[Let’s Encrypt](https://github.com/letsencrypt/letsencrypt)的源代码
+
+```bash
+git clone https://github.com/letsencrypt/letsencrypt
+```
+
+进入本地源代码目录
+
+```bash
+cd letsencrypt
+```
+
+Let’s Encrypt提供多种认证方式，因为之前在VPS上有了HTTP的网站，所以这里采用了**webroot**的方式，其他方式请参考[官方文档](https://letsencrypt.readthedocs.org/en/latest/using.html#plugins)  
+如果是**主域名**的认证：
+
+```bash
+./letsencrypt-auto --debug certonly --webroot --email ${NAME}@${VPN_SERVER_DOMAIN} -d www.${VPN_SERVER_DOMAIN} -d {VPN_SERVER_DOMAIN} -w /var/www/{VPN_SERVER_DOMAIN}
+```
+
+**子域名**的认证：
+
+```bash
+./letsencrypt-auto --debug certonly --webroot --email ${NAME}@${VPN_SERVER_DOMAIN} -d ${SUB_DOMAIN}.${VPN_SERVER_DOMAIN} -w /var/www/${VPN_SERVER_DOMAIN}/${SUB_DOMAIN}
+```
+
+然后在弹出的蓝底白字提示框中一路点击"OK"
+
+注意如下问题：
+
+* 请将命令中的**${NAME}**, **${VPN_SERVER_DOMAIN}**, **${SUB_DOMAIN}**替换成你自己的名字，域名以及子域名  
+* 因为Gentoo目前是在试验阶段，所以命令行加上**--debug**参数
+* 参数**--email**如果没有在命令行加上，会在随后弹出的对话框里提示你填写
+* **-w**指定Web服务器网址内容放置的目录，请指定自己放置的目录
+
+生成的证书放在**/etc/letsencrypt/live/[网站域名]**下  
+
+| 文件名     | 内容             | 
+|:-------------|:----------------------------------|
+| cert.pem      | 服务端证书       |
+| chain.pem     | 浏览器需要的所有证书但不包括服务端证书，比如根证书和中间证书           |
+| fullchain.pem | 包括了cert.pem和chain.pem的内容 |
+| privkey.pem   | 证书的私钥|
+
+一般情况下**fullchain.pem**和**privkey.pem**就够用了，VPN服务器配置也只用到了这两个文件。因为**IPSEC**读取证书和私钥的路径和用Let’s Encrypt生成的文件的路径不同，所以需要做如下软链接（软链接的优势是当证书自动升级后，软链接可以不变）
+
+```
+sudo ln -s /etc/letsencrypt/live/www.${VPN_SERVER_DOMAIN}/fullchain.pem /etc/ipsec.d/certs/fullchain.pem
+sudo ln -s /etc/letsencrypt/live/www.${VPN_SERVER_DOMAIN}/privkey.pem /etc/ipsec.d/private/privkey.pem
+```
+
+还有个坑是权限问题，在strongswan启动的时候，加载**privkey.pem**和**fullchain.pem**，**fullchain.pem**会报没有权限，而**privkey.pem**则没有这个问题。如何解决？修改访问权限，貌似没用，那么把**/etc/letsencrypt/live/www.${VPN_SERVER_DOMAIN}/fullchain.pem**拷贝到**/etc/ipsec.d/certs/fullchain.pem**吧，证书更新麻烦些了
+
+#### 证书的更新
+Let’s Encrypt生成的证书有效期是90天（三个月），所以开启一个定时任务（cron）自动做更新
+添加为定时任务, 编辑这个文件
+
+```bash
+sudo vi /etc/cron.monthly/letsencrypt_renew
+```
+
+添加如下内容：
+
+```bash
+#!/bin/sh
+/path/to/letsencrypt/letsencrypt-auto --debug renew > /var/log/letsencrypt/renew.log 2>&1
+```
+
+注意 **/path/to/letsencrypt**是你的Let’s Encrypt工具的安装全路径，这个脚本可以做一个更新后证书的拷贝动作，自动将更新的证书拷贝到**IPSEC**能识别的目录中，在上面那条命令后添加如下内容
+
+```
+sudo cp /etc/letsencrypt/live/www.${VPN_SERVER_DOMAIN}/fullchain.pem /etc/ipsec.d/certs/fullchain.pem
+```
+
+授予**/etc/cron.monthly/letsencrypt_renew**可执行权限
+
+```bash
+sudo chmod a+x /etc/cron.monthly/letsencrypt_renew
+```
+
+#### 配置IPSEC
+编译文件**/etc/ipsec.conf**，内容为
+
+``` ipsec
+conn IPSec_ikev2_rsa
+    keyexchange=ikev2
+    leftid=${VPN_SERVER_DOMAIN}
+    rightauth=eap-mschapv2
+    eap_identity=%any
+
+conn %default
+    keyexchange=ikev2
+    dpdaction=hold
+    dpddelay=600s
+    dpdtimeout=5s
+    lifetime=24h
+    ikelifetime=240h
+    rekey=no
+    left=%any
+    leftsubnet=0.0.0.0/0
+    leftcert=fullchain.pem
+    leftsendcert=always
+    right=%any
+    rightdns=8.8.8.8
+    rightsourceip=10.0.0.0/24
+    auto=add
+```
+
+注意 **${VPN_SERVER_DOMAIN}**一定要和用Let’s Encrypt生成证书的域名一致
+
+编辑文件**/etc/ipsec.secrets**，增加
+
+```
+ : RSA privkey.pem
+ 用户名 : EAP "密码"
+```
+
+#### ip转发以及iptables配置
+**设置iptables地址转发，具体请参考PPTP/L2TP/IPSEC等**
+
+#### 客户端配置
+如果是iOS，将Let’s Encrypt根证书安装到手机，手机访问https://letsencrypt.org/certificates/，点击**PEM**格式的**Let’s Encrypt Authority X1**证书并安装。  
+打开系统设置，添加VPN，类型选择"IKEv2"，服务器地址和远程ID为**${VPN_SERVER_DOMAIN}**，本地ID可以不填，验证方式选择用户名／密码，具体内容是**/etc/ipsec.secrets**里的用户名和密码。
+
+
+# 自签名证书方式
+签名证书需要有域名，如果VPN服务器还没有绑定域名，那么，如果用证书的方式，只有采用自签名证书啦。这篇文章[如何在 VPS 上搭建 VPN 来翻墙](http://www.jianshu.com/p/2f51144c35c9)里提到了用文章[iOS8 不越狱翻墙方案](https://songchenwen.com/tech/2014/10/13/cross-fire-wall-on-ios8/)的脚本来创建服务端和客户端的证书，这篇提到了参考[Setup IKEv2 On Demand VPN on iOS 8 and IKEv2, IKEv1 Cisco IPSec VPN with Strongswan](https://maoxian.de/2014/10/1220.html)的内容，同时，这篇文章[IPSEC VPN on Ubuntu 15.04 with StrongSwan](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html#Certificates)在证书的生成部分参考了[strongSwan 5: How to create your own private VPN](https://www.zeitgeist.se/2013/11/22/strongswan-howto-create-your-own-vpn/)  
 
 #### 生成自签名证书
 现在梳理下自签名证书的生成过程。  
