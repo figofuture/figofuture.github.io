@@ -13,8 +13,12 @@ tags:
     - l2tp
     - ipsec
     - vps
+<<<<<<< HEAD
     - strongswan
     - ike
+=======
+    - ubuntu
+>>>>>>> 3c7ab267c1945f9e1ae73bb78c5d8de2e0226dfd
     - 2016
 ---
 
@@ -459,6 +463,7 @@ MAC OS X/iOS 客户端配置，虽然MAC OS X EI Capitan(10.11.4)和iOS 9的系�
 
 最大的区别是签名证书是请大家公认的权威机构签发，且所有客户端都认同这个证书；而自签名证书是自己签发给自己的，其他客户端都不会认同这个证书（客户端浏览器会提示用户手工确认是否认同这个证书）。  
 
+<<<<<<< HEAD
 # 签名证书方式
 签名证书可以花钱购买，也可以采用Let's Encrypt方案，具体可以参考这两篇博客：[用 Let‘s Encrypt 证书搭建 IKEv2 VPN](http://blog.zorro.im/posts/strongswan-ikev2-for-ios-with-letsencrypt.html)和[Strongswan on Ubuntu 16.04 for iOS 9 Client](http://dcamero.azurewebsites.net/strongswan-ubuntu-1604-ios-9.html)  
 
@@ -592,6 +597,12 @@ conn %default
 # 自签名证书方式
 签名证书需要有域名，如果VPN服务器还没有绑定域名，那么，如果用证书的方式，只有采用自签名证书啦。这篇文章[如何在 VPS 上搭建 VPN 来翻墙](http://www.jianshu.com/p/2f51144c35c9)里提到了用文章[iOS8 不越狱翻墙方案](https://songchenwen.com/tech/2014/10/13/cross-fire-wall-on-ios8/)的脚本来创建服务端和客户端的证书，这篇提到了参考[Setup IKEv2 On Demand VPN on iOS 8 and IKEv2, IKEv1 Cisco IPSec VPN with Strongswan](https://maoxian.de/2014/10/1220.html)的内容，同时，这篇文章[IPSEC VPN on Ubuntu 15.04 with StrongSwan](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html#Certificates)在证书的生成部分参考了[strongSwan 5: How to create your own private VPN](https://www.zeitgeist.se/2013/11/22/strongswan-howto-create-your-own-vpn/)  
 
+=======
+签名证书可以花钱购买，也可以采用Let's Encrypt方案，具体可以参考这两篇博客：[用 Let‘s Encrypt 证书搭建 IKEv2 VPN](http://blog.zorro.im/posts/strongswan-ikev2-for-ios-with-letsencrypt.html)和[Strongswan on Ubuntu 16.04 for iOS 9 Client](http://dcamero.azurewebsites.net/strongswan-ubuntu-1604-ios-9.html)  
+签名证书需要有域名，如果VPN服务器还没有绑定域名，那么，如果用证书的方式，只有采用自签名证书啦。这篇文章[如何在 VPS 上搭建 VPN 来翻墙](http://www.jianshu.com/p/2f51144c35c9)里提到了用文章[iOS8 不越狱翻墙方案](https://songchenwen.com/tech/2014/10/13/cross-fire-wall-on-ios8/)的脚本来创建服务端和客户端的证书，这篇提到了参考[Setup IKEv2 On Demand VPN on iOS 8 and IKEv2, IKEv1 Cisco IPSec VPN with Strongswan](https://maoxian.de/2014/10/1220.html)的内容，同时，这篇文章[IPSEC VPN on Ubuntu 15.04 with StrongSwan](https://raymii.org/s/tutorials/IPSEC_vpn_with_Ubuntu_15.04.html#Certificates)在证书的生成部分参考了[strongSwan 5: How to create your own private VPN](https://www.zeitgeist.se/2013/11/22/strongswan-howto-create-your-own-vpn/)  
+
+
+>>>>>>> 3c7ab267c1945f9e1ae73bb78c5d8de2e0226dfd
 #### 生成自签名证书
 现在梳理下自签名证书的生成过程。  
 
