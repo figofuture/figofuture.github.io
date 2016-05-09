@@ -13,7 +13,8 @@ tags:
     - l2tp
     - ipsec
     - vps
-    - ubuntu
+    - strongswan
+    - ike
     - 2016
 ---
 
