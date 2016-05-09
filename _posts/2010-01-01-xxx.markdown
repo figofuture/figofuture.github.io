@@ -1,6 +1,0 @@
----
-layout: null
-permalink: /.well-known/acme-challenge/KdABDcE2dx297FJ4G6JPv7l7WQY5LG9S1VnnZ2dv8kI
----
-
-KdABDcE2dx297FJ4G6JPv7l7WQY5LG9S1VnnZ2dv8kI.pjxUoA_1EQBdAWTbFJXjVsyhMvLZWc3p_vvrlX4C7Lo
