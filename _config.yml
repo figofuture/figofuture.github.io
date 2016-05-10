@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: figofuture@gmail.com
 description: "关于技术与编程、黑客与极客 | 非戈，Tech Lover，APP Developer，Software Researcher | 这里是 @figofuture 的个人博客，和您一起看外面的世界。"
 keyword: "figo, 非戈, figofuture, 菲戈, 飞哥, @figofuture, 非戈的博客, Blog, 博客, 个人网站, 互联网, 技术, 运营, 产品, Linux, Android, 安卓, iOS, Gentoo, 极客, Geek"
-url: "http://www.figotan.org"              # your host, for absolute URL
+url: "https://www.figotan.org"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 

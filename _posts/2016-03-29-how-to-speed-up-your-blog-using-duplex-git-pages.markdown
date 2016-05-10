@@ -135,11 +135,11 @@ tags:
 6. 将公钥分别导入到[github](https://github.com)和[coding](https://coding.net)的账户下；  
 7. 从coding签出最新的代码  
 `cd $OPENSHIFT_DATA_DIR`  
-`ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git clone git@git.coding.net:figotan/figotan.git'`  
+`ssh-agent bash -c 'ssh-add $OPENSHIFT_DATA_DIR/.ssh/id_rsa; git clone git@git.coding.net:figotan/figotan.git'`  
 `cd figotan`  
 8. 跟踪并获取coding上最新的代码  
 `git branch --set-upstream-to=coding-origin/coding-pages coding-pages`  
-`ssh-agent bash -c 'ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages'`  
+`ssh-agent bash -c 'ssh-add $OPENSHIFT_DATA_DIR/.ssh/id_rsa; git pull origin coding-pages'`  
 9. 添加github远程代码仓库  
 `git remote add gh-origin git@github.com:figofuture/figofuture.github.io.git`  
 10. 编写php api接口并部署  
@@ -152,7 +152,7 @@ tags:
 ```php
 <?php
 if( $_GET['key'] == 'KEY' ) {
-    echo shell_exec('cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git pull origin coding-pages";ssh-agent bash -c "ssh-add /var/lib/openshift/[openshift分配的名字]/app-root/data/.ssh/id_rsa; git push gh-origin coding-pages:master"');
+    echo shell_exec('cd $OPENSHIFT_DATA_DIR/figotan;ssh-agent bash -c "ssh-add $OPENSHIFT_DATA_DIR/.ssh/id_rsa; git pull origin coding-pages";ssh-agent bash -c "ssh-add $OPENSHIFT_DATA_DIR/.ssh/id_rsa; git push gh-origin coding-pages:master"');
 }
 else {
     header('HTTP/1.1 400 Bad Request');
