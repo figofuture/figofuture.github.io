@@ -4,7 +4,7 @@ title:  "博客优化记"
 subtitle:   "升级装备，加红加蓝，上护甲"
 date:       2016-05-10
 author:     "figotan"
-header-img: "img/header/20160510.png"
+header-img: "img/header/20160510.jpg"
 header-mask: 0.5
 catalog: true
 published: true
