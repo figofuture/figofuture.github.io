@@ -425,5 +425,6 @@ android {
 [安卓新的构建系统](http://tools.android.com/tech-docs/new-build-system)  
 [GRADLE官网](http://gradle.org)  
 
-
+## 声明
+本文已独家授权微信公众号**Android程序员**(**AndroidTrending**)在微信公众号平台原创首发。
 
