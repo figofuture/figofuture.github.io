@@ -9,7 +9,7 @@ header-mask: 0.5
 catalog: true
 tags:
     - gradle
-    - android
+    - Android
     - build
     - make
     - blog
