@@ -119,6 +119,7 @@ org.gradle.parallel=true
 
 ## 基础配置篇
 全局基础配置管理  
+
 #### 设置全局编码
 如果导入一个windows下编写的项目，而代码中有中文注释，采用GBK, GB18030等编码方式时，编译会报错，可以采用如下方式统一项目的编码  
 
@@ -214,6 +215,9 @@ if (propFile.canRead()) {
 }
 ```
 
+**特别注意**  
+如果在构建类型(**buildTypes**)或者产品种类(**productFlavors**)需要引用到上述的签名类型，请注意一定要把签名类型的定义放在引用它的对象之前，否则会报错找不到签名配置。其实整个GRADLE语法都是先定义后引用的，这个让写惯JAVA的我确实不习惯。
+
 #### 设置第三方maven地址
 其中name和credentials是可选项，视具体情况而定
 
@@ -247,7 +251,7 @@ apply from:"../resource/config.gradle"
 ext {
     // global variables definition
     compileSdkVersion = 'Google Inc.:Google APIs:23'
-    buildToolsVersion = "23.0.2"
+    buildToolsVersion = "23.0.3"
     minSdkVersion = 14
     targetSdkVersion = 23
 }
@@ -280,10 +284,10 @@ resValue "string", "content_main", "Hello world from release!"
 ```
 
 > buildConfigField支持Java中基本数据类型，如果是字符串，记得加转义后的双引号
-> resValue支持res/values下的资源定义，字符串无需叫转义后的双引号
+> resValue支持res/values下的资源定义，字符串无需加转义后的双引号
 
 #### 设置支持的语言
-利用这个配置可以去掉三方库中无用的语言
+利用这个配置可以去掉三方库中无用的语言（人类的自然语言，非计算机编程语言）
 
 ``` gradle
 android {
@@ -301,7 +305,6 @@ android.libraryVariants.all { variant ->
     variant.outputs.each { output ->
         if (output.outputFile != null && output.outputFile.name.endsWith('.aar')) {
             def name = "${rootDir}/demo/libs/library.aar"
-            println name
             output.outputFile = file(name)
         }
     }
@@ -381,7 +384,7 @@ dependencies {
 ```
 
 #### aar本地库依赖
-jar本地库的依赖很容易写，arr本地库的依赖稍微麻烦些
+jar本地库的依赖很容易写，aar本地库的依赖稍微麻烦些
 
 ``` gradle
 allprojects {
@@ -401,7 +404,7 @@ dependencies {
 ## NDK篇  
 NDK配置
 
-#### 只保留某一个abi，比如arm-eabi
+#### 只保留某一个abi，比如armeabi
 为了包大小的考虑，去掉**多余**的本地库
 
 ``` gradle
@@ -413,6 +416,44 @@ android {
     }
 }
 ```
+
+## 特殊任务篇
+本篇主要是讲述一些原本GRADLE默认构建脚本不支持的任务，如果通过自定义task来完成
+
+#### 如何产生Jar文件
+用GRADLE构建SDK项目的时候，有时候需要提供给集成方Jar包。如果项目是安卓库工程的方式，那么默认的产出是aar库，其实aar内部放了一个Jar（**classes.jar**），我们要做的，其实只要把这个jar文件拷贝出来并且重新命名就可以了。脚本参考如下：
+
+```
+android.libraryVariants.all { variant ->
+    variant.outputs.each { output ->
+        def file = output.outputFile
+        def fileName = 'classes.jar'
+        def name = variant.buildType.name
+
+        task "makeJar${variant.name.capitalize()}" << {
+            copy {
+                from("${projectDir}/build/intermediates/bundles/"+"${name}") {
+                    include(fileName)
+                }
+                into(file.parent)
+                rename (fileName, "${project.name}"+"-${name}.jar")
+            }
+        }
+    }
+
+}
+
+project.tasks.whenTaskAdded { task ->
+    android.libraryVariants.all { variant ->
+        if (task.name == "bundle${variant.name.capitalize()}") {
+            task.finalizedBy "makeJar${variant.name.capitalize()}"
+        }
+    }
+
+}
+```
+
+这个办法是不是很讨巧，😄，合适的解决问题就好！
 
 ## 总结篇
 **只有更好，木有最好；**  
