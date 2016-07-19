@@ -8,11 +8,11 @@ header-img: "img/header/gradle.jpg"
 header-mask: 0.5
 catalog: true
 tags:
-    - gradle
+    - Gradle
     - Android
     - build
     - make
-    - blog
+    - Blog
     - 2016
 ---
 随着谷歌对Eclipse的无情抛弃和对Android Studio的日趋完善，使用gradle构建Android项目已经成为开发者的一项必会良技。那么，问题来了，采用什么样的姿势才能让项目开发构建过程高潮迭起，精彩不断呢？  
@@ -455,6 +455,31 @@ project.tasks.whenTaskAdded { task ->
 
 这个办法是不是很讨巧，😄，合适的解决问题就好！
 
+#### 让public.xml工作起来吧
+有人会问public.xml是做啥子的，关于这个问题，这里不赘述了，感兴趣的可以自行搜补。可惜的是，[Gradle plugin 1.3已经不再支持这个功能](https://code.google.com/p/android/issues/detail?id=182046)，解决方案参考了[ceabie/AndroidPublicXmlCompat](https://github.com/ceabie/AndroidPublicXmlCompat)，这里摘录如下：
+
+```
+afterEvaluate {
+    for (variant in android.applicationVariants) {
+        def scope = variant.getVariantData().getScope()
+        String mergeTaskName = scope.getMergeResourcesTask().name
+        def mergeTask = tasks.getByName(mergeTaskName)
+
+        mergeTask.doLast {
+            copy {
+                int i=0
+                from(android.sourceSets.main.res.srcDirs) {
+                    include 'values/public.xml'
+                    rename 'public.xml', (i++ == 0? "public.xml": "public_${i}.xml")
+                }
+
+                into(mergeTask.outputDir)
+            }
+        }
+    }
+}
+```
+
 ## 总结篇
 **只有更好，木有最好；**  
 **只有总结，木有完结；**  
@@ -465,7 +490,3 @@ project.tasks.whenTaskAdded { task ->
 [加速GRADLE构建的6个技巧](https://medium.com/@shelajev/6-tips-to-speed-up-your-gradle-build-3d98791d3df9#.hhvknc20d)  
 [安卓新的构建系统](http://tools.android.com/tech-docs/new-build-system)  
 [GRADLE官网](http://gradle.org)  
-
-## 声明
-本文已独家授权微信公众号**Android程序员**(**AndroidTrending**)在微信公众号平台原创首发。
-
