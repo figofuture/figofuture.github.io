@@ -142,6 +142,12 @@ tags:
 [http://sla.ckers.org/forum/](http://sla.ckers.org/forum/)  
 [Hack This Site Forum • Index page](http://www.hackthissite.org/forums/)  
 [Awesome Security](https://github.com/sbilly/awesome-security)  
+[application security](https://github.com/paragonie/awesome-appsec)  
+[Awesome CTF](https://github.com/apsdehal/awesome-ctf)  
+[Awesome Malware Analysis](https://github.com/rshipp/awesome-malware-analysis)  
+[Awesome Hacking](https://github.com/carpedm20/awesome-hacking)  
+[Awesome Honeypots](https://github.com/paralax/awesome-honeypots)  
+[awesome-incident-response](https://github.com/meirwah/awesome-incident-response)        
 
 ## 参考链接
 [安全类网站推荐列表](http://daily.zhihu.com/story/3877456)  
