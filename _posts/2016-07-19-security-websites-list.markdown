@@ -100,6 +100,7 @@ tags:
 [android-security-awesome](https://github.com/ashishb/android-security-awesome)  
 [2016 黑客的 Android 工具箱都有哪些？](http://www.oschina.net/news/70908/2016-android-hacker-toolkit)  
 [Hacked Team](https://github.com/hackedteam)  
+[A database of published security advisories reported by the Programa STIC Team at Fundación Sadosky](https://github.com/programa-stic/security-advisories)  
 
 ## OSX & iOS  
 [OSX和iOS系统相关安全工具](https://github.com/ashishb/osx-and-ios-security-awesome)  
