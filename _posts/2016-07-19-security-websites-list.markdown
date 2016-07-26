@@ -148,7 +148,8 @@ tags:
 [Awesome Malware Analysis](https://github.com/rshipp/awesome-malware-analysis)  
 [Awesome Hacking](https://github.com/carpedm20/awesome-hacking)  
 [Awesome Honeypots](https://github.com/paralax/awesome-honeypots)  
-[awesome-incident-response](https://github.com/meirwah/awesome-incident-response)        
+[awesome-incident-response](https://github.com/meirwah/awesome-incident-response)  
+[A practical security guide for web developers](https://github.com/FallibleInc/security-guide-for-developers)
 
 ## 参考链接
 [安全类网站推荐列表](http://daily.zhihu.com/story/3877456)  
