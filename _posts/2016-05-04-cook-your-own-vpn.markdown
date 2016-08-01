@@ -44,11 +44,16 @@ tags:
 **性价比**这个要自己看，选择几核心的CPU，多大的内存，多少容量的磁盘，多大的带宽，几个独立的IP地址，虚拟方式([OpenVZ](https://openvz.org/Main_Page), [Xen](http://www.xenproject.org), [KVM](http://www.linux-kvm.org/page/Main_Page))等，最后这些性能都会映射到价格。一分钱一分货，我的建议是合适就好，土豪除外。服务商一般会提供一些套餐组合，以及某段时间放出的特惠套餐，每年在圣诞节前后还会有一些优惠套餐的推出以及优惠码的放送。[**熠锋美国主机评论**](http://www.yfushost.com/)这个网站时常有收集最近的一些优惠信息，如果想找可以去看看。  
 
 #### 如何测试VPS性能
-一些测试VPS性能的脚本工具可供参考：
+一些测试VPS性能的脚本工具可供参考：  
 
-* [vpsbench](https://github.com/mgutz/vpsbench)
-* [Freevps](https://freevps.us/downloads/bench.sh)
-* [一键测试脚本bench.sh](https://teddysun.com/444.html)
+* [vpsbench](https://github.com/mgutz/vpsbench)  
+* [Freevps](https://freevps.us/downloads/bench.sh)  
+* [一键测试脚本bench.sh](https://teddysun.com/444.html)  
+
+#### 第三方VPS性能评测
+第三方评测服务及网站资源  
+
+* [VPS Benchmarks](http://www.vpsbenchmarks.com)  
 
 # 选择操作系统
 再来是主机操作系统的选择，一般廉价的VPS都只提供Linux操作系统，我目前只有购买过安装Linux的VPS主机，所以想看Windows的可以就此打住了。就算是Linux操作系统，也只有提供某几个发行版的选择，[Ubuntu](http://www.ubuntu.com/global), [CentOS](https://www.centos.org), [Debian](https://www.debian.org/), [Arch Linux](https://www.archlinux.org/)是常客。对于Linux操作系统，我个人除了[Gentoo](https://gentoo.org/)和[LFS](http://linuxfromscratch.org/)以外，基本上不太常用其他的发行版。而支持Gentoo的VPS供应商(**Linode**)非常少，LFS几乎就没有了，至少还没有找到过。我购买的第一个VPS主机服务是[**Chicago VPS**](https://www.chicagovps.net)提供的年付12美刀基于Gentoo 64位的VPS,当时购买只是因为廉价和Gentoo，但是配置超烂，而且速度狂慢无比，所以在上面也没有做什么东西，基本上是为了以前给公司的一个创新项目做demo用了一下，后来废弃掉再也没有使用了。  
