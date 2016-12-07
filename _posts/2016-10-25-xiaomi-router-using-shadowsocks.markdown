@@ -5,7 +5,7 @@ subtitle:   ""
 date:       2016-10-25
 author:     "figotan"
 header-img: "img/header/20161025.jpg"
-header-mask: 0.5
+header-mask: 0.2
 catalog: true
 tags:
     - 小米路由器
@@ -131,12 +131,76 @@ chmod a+x /etc/init.d/shadowsocks
 /etc/init.d/shadowsocks enable
 ```
 
+## 源代码编译Shadowsocks
+嫌小米路由器里自带的Shadowsocks版本太旧，想从源代码安装一个定制过的Shadowsocks，那么就这样折腾吧。  
+
+#### 交叉编译环境搭建  
+做过嵌入式系统开发的同学应该对这个概念不陌生，没做过的，额，问问谷歌看。这里简单介绍下交叉编译环境的搭建步骤。
+
+首先，你得有一个安装了linux的机器，我的是**Gentoo**  
+然后，在工作的目录新建一个子目录叫做"**xiaomi**"，方便把和小米路由器相关的东西都放在一起。
+
+```
+cd ~  
+mkdir xiaomi  
+cd xiaomi  
+```
+
+下载并解压缩[小米路由器工具链](http://bigota.miwifi.com/xiaoqiang/sdk/tools/package/sdk_package.zip)  
+
+```
+wget -c http://bigota.miwifi.com/xiaoqiang/sdk/tools/package/sdk_package.zip  
+unzip http://bigota.miwifi.com/xiaoqiang/sdk/tools/package/sdk_package.zip  
+```
+编译工具集在**sdk_package/toolchain/bin/**下  
+
+将编译工具集的运行路径加入到系统默认的运行路径中
+
+```
+vi ~/.bash_profile
+```
+
+在文件结尾添加如下内容并保存
+
+```
+XIAOMI_PATH=~/xiaomi/sdk_package/toolchain/bin
+export PATH=$XIAOMI_PATH:${PATH}
+```
+
+让配置生效
+
+```
+source ~/.bash_profile
+```
+
+检查工具是否安装好
+
+```
+arm-xiaomi-linux-uclibcgnueabi-gcc -v
+```
+
+如果看到类似如下输出，那么，恭喜你，环境已经搭建完成
+
+```
+Using built-in specs.
+COLLECT_GCC=arm-xiaomi-linux-uclibcgnueabi-gcc
+COLLECT_LTO_WRAPPER=/home/figo/xiaomi/sdk_package/toolchain/bin/../libexec/gcc/arm-xiaomi-linux-uclibcgnueabi/4.8.2/lto-wrapper
+Target: arm-xiaomi-linux-uclibcgnueabi
+Configured with: /home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/src/gcc-linaro-4.8-2013.06-1/configure --build=x86_64-build_unknown-linux-gnu --host=x86_64-build_unknown-linux-gnu --target=arm-xiaomi-linux-uclibcgnueabi --prefix=/home/chen/xq/external_toolchain/xiaoqiang_r1d/toolchain/arm-xiaomi-linux-uclibcgnueabi --with-sysroot=/home/chen/xq/external_toolchain/xiaoqiang_r1d/toolchain/arm-xiaomi-linux-uclibcgnueabi/arm-xiaomi-linux-uclibcgnueabi/sysroot --enable-languages=c,c++ --with-arch=armv7-a --with-cpu=cortex-a9 --with-tune=cortex-a9 --with-float=soft --with-pkgversion='crosstool-NG 1.19.0' --enable-__cxa_atexit --disable-libmudflap --disable-libgomp --disable-libssp --disable-libquadmath --disable-libquadmath-support --with-gmp=/home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/arm-xiaomi-linux-uclibcgnueabi/buildtools --with-mpfr=/home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/arm-xiaomi-linux-uclibcgnueabi/buildtools --with-mpc=/home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/arm-xiaomi-linux-uclibcgnueabi/buildtools --with-isl=/home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/arm-xiaomi-linux-uclibcgnueabi/buildtools --with-cloog=/home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/arm-xiaomi-linux-uclibcgnueabi/buildtools --with-libelf=/home/chen/xq/external_toolchain/xiaoqiang_r1d/.build/arm-xiaomi-linux-uclibcgnueabi/buildtools --with-host-libstdcxx='-static-libgcc -Wl,-Bstatic,-lstdc++,-Bdynamic -lm' --enable-threads=posix --enable-target-optspace --disable-multilib --with-local-prefix=/home/chen/xq/external_toolchain/xiaoqiang_r1d/toolchain/arm-xiaomi-linux-uclibcgnueabi/arm-xiaomi-linux-uclibcgnueabi/sysroot --enable-c99 --enable-long-long
+Thread model: posix
+gcc version 4.8.2 20130603 (prerelease) (crosstool-NG 1.19.0) 
+```
+
+#### 源码编译
+
+
 ## 参考资料
 
 [【SS系列教程】小米路由器安装Shadowsocks](http://bbs.xiaomi.cn/t-11547929)  
 [小米路由器一键安装Shadowsocks教程（支持全型号）](http://bbs.xiaomi.cn/t-12863925)  
 [2016/10/14更新小米路由器2 (R2D) shadowsocks-libev SSR最新版(2.4.8)使用](http://bbs.xiaomi.cn/t-13088506)  
 [小米路由器2 (R2D) 交叉编译shadowsocks-libev ssr版](http://www.jianshu.com/p/b1a8443dbe5f)  
-
+[OpenWrt智能、自动、透明翻墙路由器教程](https://softwaredownload.gitbooks.io/openwrt-fanqiang/content/)  
+[Dnsmasq的国内域名加速以及域名劫持防护配置](https://github.com/felixonmars/dnsmasq-china-list)  
 
 

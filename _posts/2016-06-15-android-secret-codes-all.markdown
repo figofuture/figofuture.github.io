@@ -10,13 +10,30 @@ catalog: true
 published: true
 tags:
     - Android
+    - MMI
+    - USSD
     - 2016
 ---
 
 安卓系统除了慢，卡顿，耗电，耗流量，体验千奇百怪，漏洞多且不安全不靠谱之外，还有很多稀奇古怪的玩意儿。比如利用漏洞完成某些看起来不可能实现的任务所采用的黑魔法。当然，也有本文说的蓝魔法，Secret Codes.
 
 ## 什么是Secret Codes
-一个系统或者应用，提供了一些高阶的功能（必杀技，大招），但是功能的开发者又不想让所有的用户都知道并且轻而易举的获取并使用这些功能（往往都是些很强大的功能，但是危险系数也很高，比如可以擦除系统上所有的数据，又或者能看到内幕信息，比如系统底层的运行数据）。那么，将这些功能的界面入口隐藏起来，并且通过一个**咒语**来开启和关闭，这样的**蓝魔法**就是**Secret Codes**。
+一个系统或者应用，提供了一些高阶的功能（必杀技，大招），但是功能的开发者又不想让所有的用户都知道并且轻而易举的获取并使用这些功能（往往都是些很强大的功能，但是危险系数也很高，比如可以擦除系统上所有的数据，又或者能看到内幕信息，比如系统底层的运行数据）。那么，将这些功能的界面入口隐藏起来，并且通过一个**咒语**来开启和关闭，这样的**蓝魔法**就是**Secret Codes**。  
+不管是**蓝魔法**还是**Secret Codes**，这些都是方便非技术小白用户理解的通俗叫法。其实，在移动通讯领域，它的学名叫做**USSD**或者**MMI codes**，那么，这些又是啥，下面简单解释下，如果对太专业的东西没兴趣，可以直接跳过看下一节。
+
+#### 什么是USSD  
+**USSD**（Unstructured Supplementary Service Data）全称非结构化补充数据业务，是一种基于GSM网络的交互式数据业务。当你使用手机键盘输入一些网络已预先制定的数字或者符号比如*#等，再按send也就是拨号键就可以向网络发送一条指令，网络根据你的指令选择你需要的服务提供给你。  
+来自[维基百科](https://en.wikipedia.org/wiki/Unstructured_Supplementary_Service_Data)的解释  
+> Unstructured Supplementary Service Data (USSD), sometimes referred to as "Quick Codes" or "Feature codes", is a protocol used by GSM cellular telephones to communicate with the service provider's computers. USSD can be used for WAP browsing, prepaid callback service, mobile-money services, location-based content services, menu-based information services, and as part of configuring the phone on the network.
+
+#### 什么是MMI  
+MMI(Man Machine Interface)全称 人机界面，所以这些codes就是人机界面交互的指令编码，它和USSD有什么不同，[这篇文章](https://berlin.ccc.de/~tobias/mmi-ussd-ss-codes-explained.html)很好的解释了一切，这里不在赘述。
+
+#### Android系统中关于这部分的源代码  
+CDMA  
+https://android.googlesource.com/platform/frameworks/opt/telephony/+/android-7.1.1_r4/src/java/com/android/internal/telephony/cdma/CdmaMmiCode.java  
+GSM  
+https://android.googlesource.com/platform/frameworks/opt/telephony/+/android-7.1.1_r4/src/java/com/android/internal/telephony/gsm/GsmMmiCode.java  
 
 ## 蓝魔法能做什么
 如果我们念完咒语，看看它能做些什么
@@ -24,9 +41,11 @@ tags:
 * 清除手机所有的设置并恢复到第一次开机的状态
 * 清空手机里所有的数据（安装的APP，设置，保存的密码，照片，音频，视频，下载的文件，等等）并重启手机
 * 重新安装手机的操作系统
-* 屏幕硬件功能检测
+* 屏幕等硬件功能检测
 * 获取产品代码
 * 查看电池状态
+* 查看手机状态
+* 查看网络状态
 * 更多
 
 ## 咒语大全
@@ -43,7 +62,7 @@ tags:
 |\*\#\*\#34971539\#\*\#\*|摄像头系统信息|注意不要点击不要点击升级摄像头系统信息，小心1秒变砖|
 |\*\#\*\#7594\#\*\#\*|改变电源按键的功能，允许直接关机而不是询问用户选择操作（无声模式，飞行模式，关机）||
 |\*\#\*\#273283\*255\*663282\*\#\*\#\*|备份所有的媒体文件，打开文件拷贝界面让你能够备份图片，视屏和音频等媒体文件||
-|\*\#\*\#8255\#\*\#\*|启动G Talk服务监控||
+|\*\#\*\#8255\#\*\#\*|启动GTalk服务监控||
 |\*2767\*4387264636\*|显示产品信息||
 |\*\#0228\#|显示电池状态||
 |\*\#12580\*369\*|软件和硬件信息||
@@ -85,6 +104,7 @@ tags:
 |\*\#\*\#44336\#\*\#\*|显示构建时间，更新列表||
 |\*\#03\#|NAND闪存串号||
 |\*\#3214789\#|GCF模式状态||
+|\*\#4238378\#|GCF配置||
 
 
 #### 工厂测试
@@ -103,6 +123,9 @@ tags:
 |\*\#0782\#|实时钟测试||
 |\*\#0589\#|光感应器测试||
 |\*\#7353\#|快速测试菜单||
+|\*\#3214789650\#|LBS测试|
+|\*\#8999\*8378\#|测试菜单|
+|\*\#07\#|测试历史|
 
 #### PDA和电话
 
@@ -115,6 +138,11 @@ tags:
 |\*\*05\*\*\*\#|从紧急拨号屏幕解锁PUK码||
 |\*\#301279\#|网络制式HSDPA HSUPA控制菜单||
 |\*\#7465625\#|查看手机锁定状态||
+|\*7465625\*638\*\#|配置网络锁定MCC/MNC|
+|\*7465625\*782\*\#|配置网络锁定NSP|
+|\*7465625\*77\*\#|插入网络锁定键SP|
+|\*7465625\*27\*\#|插入网络锁定键NSP/CP|
+|\*\#272886\#|自动接听选择|
 
 #### 其他
 
@@ -130,6 +158,7 @@ tags:
 |\*\#9090\#|打开服务模式|Samsung|
 |\*\#7284\#|FactoryKeystring菜单|Samsung|
 |\*\#34971539\#|访问摄像头系统|Samsung|
+|\*\#7412365\#|摄像头固件菜单|Samsung|
 |\#\#7764726|Motorola DROID 隐藏服务菜单|Motorola 默认密码6个0|
 |1809\#\*990\#|LG Optimus 2x 隐藏服务菜单|LG 默认密码6个0|
 |3845\#\*920\#|LG Optimus 3D 隐藏服务菜单|LG 默认密码6个0|
@@ -185,4 +214,7 @@ tags:
 [20 Android Secret Codes List 2015 For All Phones](http://www.smartphonetool.com/2015/06/20-android-secret-codes-list-2015.html)  
 [Android Secret codes](http://www.nerdynaut.com/tech-mobile/android-secret-codes1)  
 [Android Secret Codes](http://hardmasterreset.com/android-secret-codes/)  
-[Android-SecretCodes](https://github.com/SimonMarquis/Android-SecretCodes)
+[Android-SecretCodes](https://github.com/SimonMarquis/Android-SecretCodes)  
+[Unstructured Supplementary Service Data(USSD)](https://en.wikipedia.org/wiki/Unstructured_Supplementary_Service_Data)  
+[What’s the difference between USSD, MMI and SS codes?](https://berlin.ccc.de/~tobias/mmi-ussd-ss-codes-explained.html)  
+[MMI Codes from android](http://www.cnblogs.com/mengshu-lbq/archive/2010/12/14/1905971.html)  
