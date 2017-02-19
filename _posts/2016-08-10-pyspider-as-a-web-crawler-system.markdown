@@ -424,19 +424,32 @@ class Handler(BaseHandler):
 
 ## 收集的一些其它网络爬虫的资料  
 
+#### Java
 [雪球股票信息超级爬虫](https://github.com/decaywood/XueQiuSuperSpider)  
 
-[乌云公开漏洞、知识库爬虫和搜索](https://github.com/hanc00l/wooyun_public)  
-
+#### Python
 [Scrapy](http://scrapy.org/)  
-
+[a smart stream-like crawler & etl python library](https://github.com/ferventdesert/etlpy)  
 [爬视频音频神器You-Get](https://you-get.org/)  
-
 [另一款视频下载神器youtube-dl](https://github.com/rg3/youtube-dl)  
 [youtube-dl图形界面版](https://github.com/MrS0m30n3/youtube-dl-gui)  
-
+[自动抓取Tumblr指定用户视频分享](https://github.com/Thoxvi/MyCar_python)  
 [crawley](https://github.com/jmg/crawley)  
+[乌云公开漏洞、知识库爬虫和搜索](https://github.com/hanc00l/wooyun_public)  
+[下载指定的 Tumblr 博客中的图片，视频](https://github.com/dixudx/tumblr-crawler)  
+[下载指定的 Tumblr 博客中的图片，视频，玄魂修改版](https://github.com/xuanhun/tumblr-crawler)  
 
+#### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
 [PHPCrawl](https://sourceforge.net/projects/phpcrawl/)  
 [Phpfetcher](https://github.com/fanfank/phpfetcher)  
+[php spider framework](https://github.com/hirudy/Tspider)  
+
+#### Nodejs
+[Nodejs 编写的爬虫工具](https://github.com/xwartz/spider)  
+[批量抓取AV磁链或封面的苦劳力](https://github.com/raawaa/jav-scrapy)  
+[Easily download all the photos from a Tumblr blog.](https://github.com/Leeiio/tumblr-downloader)  
+
+#### Others
+[visualized crawler & ETL IDE written with C#/WPF](https://github.com/ferventdesert/Hawk)  
+[给不了你梦中情人，至少还有硬盘女神：hardseed](https://github.com/yangyangwithgnu/hardseed)  
