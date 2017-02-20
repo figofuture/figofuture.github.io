@@ -426,6 +426,7 @@ class Handler(BaseHandler):
 
 #### Java
 [雪球股票信息超级爬虫](https://github.com/decaywood/XueQiuSuperSpider)  
+[一个简单易用的爬虫框架,内置代理管理模块,灵活设置多线程爬取](https://github.com/MrJiao/SpiderJackson)  
 
 #### Python
 [Scrapy](http://scrapy.org/)  
