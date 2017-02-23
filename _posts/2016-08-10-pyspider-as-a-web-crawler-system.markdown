@@ -427,6 +427,8 @@ class Handler(BaseHandler):
 #### Java
 [雪球股票信息超级爬虫](https://github.com/decaywood/XueQiuSuperSpider)  
 [一个简单易用的爬虫框架,内置代理管理模块,灵活设置多线程爬取](https://github.com/MrJiao/SpiderJackson)  
+[A scalable web crawler framework for Java](https://github.com/code4craft/webmagic)  
+[强力 Java 爬虫，列表分页、详细页分页、ajax、微内核高扩展、配置灵活](https://git.oschina.net/l-weiwei/Spiderman2)  
 
 #### Python
 [Scrapy](http://scrapy.org/)  
@@ -445,6 +447,7 @@ class Handler(BaseHandler):
 [PHPCrawl](https://sourceforge.net/projects/phpcrawl/)  
 [Phpfetcher](https://github.com/fanfank/phpfetcher)  
 [php spider framework](https://github.com/hirudy/Tspider)  
+[我用爬虫一天时间“偷了”知乎一百万用户，只为证明PHP是世界上最好的语言](https://github.com/owner888/phpspider)  
 
 #### Nodejs
 [Nodejs 编写的爬虫工具](https://github.com/xwartz/spider)  
