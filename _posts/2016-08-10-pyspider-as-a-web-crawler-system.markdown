@@ -441,6 +441,9 @@ class Handler(BaseHandler):
 [乌云公开漏洞、知识库爬虫和搜索](https://github.com/hanc00l/wooyun_public)  
 [下载指定的 Tumblr 博客中的图片，视频](https://github.com/dixudx/tumblr-crawler)  
 [下载指定的 Tumblr 博客中的图片，视频，玄魂修改版](https://github.com/xuanhun/tumblr-crawler)  
+[DHT网络爬虫](https://github.com/78/ssbc)  
+[豆瓣电影、书籍、小组、相册、东西等爬虫集 writen in Python](https://github.com/dontcontactme/doubanspiders)  
+[如何不用客户端下载 YouKu 视频-YouKu 实现下载 Python3 实现](http://zpz.name/2378/)  
 
 #### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
@@ -453,7 +456,17 @@ class Handler(BaseHandler):
 [Nodejs 编写的爬虫工具](https://github.com/xwartz/spider)  
 [批量抓取AV磁链或封面的苦劳力](https://github.com/raawaa/jav-scrapy)  
 [Easily download all the photos from a Tumblr blog.](https://github.com/Leeiio/tumblr-downloader)  
+[DHT Spider + BitTorrent Client = P2P Spider](https://github.com/dontcontactme/p2pspider)  
 
-#### Others
+#### Ruby
+[A simple DHT crawler, written in Ruby](https://github.com/dontcontactme/rbdht)  
+
+#### C sharp
 [visualized crawler & ETL IDE written with C#/WPF](https://github.com/ferventdesert/Hawk)  
+
+#### Erlang
+[使用erlang实现P2P磁力搜索](https://github.com/kevinlynx/dhtcrawler2)  
+
+#### C++
+
 [给不了你梦中情人，至少还有硬盘女神：hardseed](https://github.com/yangyangwithgnu/hardseed)  

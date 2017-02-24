@@ -64,6 +64,10 @@ tags:
 [Nuwa](https://github.com/jasonross/Nuwa) 寒江不钓  
 [DroidFix](https://github.com/bunnyblue/DroidFix) BunnyBlue  
 [AndFix](https://github.com/alibaba/AndFix) 董炼师  
+[Tinker](https://github.com/Tencent/tinker) 腾讯  
+[ZeusPlugin](https://github.com/iReaderAndroid/ZeusPlugin) 掌阅  
+[Robust](http://tech.meituan.com/android_robust.html) 美团  
+[Aceso](https://github.com/meili/Aceso) 蘑菇街  
 
 #### 热修复方案实践谈  
 [各大热补丁方案分析和比较](http://blog.zhaiyifan.cn/2015/11/20/HotPatchCompare/)  
