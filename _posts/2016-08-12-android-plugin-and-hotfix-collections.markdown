@@ -25,6 +25,7 @@ tags:
 [Android FAQ](https://github.com/wequick/Small/wiki/Android-FAQ)  
 [android-dynamic-load-awesome](https://github.com/liaohuqiu/android-dynamic-load-awesome)  
 [农民伯伯 Android动态加载jar/dex](http://www.cnblogs.com/over140/archive/2011/11/23/2259367.html)  
+[https://github.com/nuptboyzhb/AndroidPluginFramework](https://github.com/nuptboyzhb/AndroidPluginFramework)  
 
 #### 开源的插件化框架
 [任玉刚 dynamic-load-apk](https://github.com/singwhatiwanna/dynamic-load-apk)  
@@ -57,6 +58,7 @@ tags:
 #### 原理分析  
 [Android 热补丁动态修复框架小结](http://blog.csdn.net/lmj623565791/article/details/49883661) 鸿洋_  
 [Android热更新实现原理](http://blog.csdn.net/lzyzsd/article/details/49843581) 大头鬼Bruce  
+[深度理解Android InstantRun原理以及源码分析](https://github.com/nuptboyzhb/AndroidInstantRun)  
 
 #### 开源热修复框架  
 [HotFix](https://github.com/dodola/HotFix) dodola  
