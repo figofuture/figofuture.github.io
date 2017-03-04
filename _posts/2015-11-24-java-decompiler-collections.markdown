@@ -84,11 +84,17 @@ Jadx decompiles .class and .jar files, but also it produces Java source code fro
 # ClassyShark
 open-source, [see more][11]  
 Author: Boris Farber  
-[ClassyShark][12] is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies.  
+[ClassyShark](http://classyshark.com/) is a standalone tool for Android developers. It can reliably browse any Android executable and show important info such as class interfaces and members, dex counts and dependencies.  
 The browser supports multiple formats including libraries (.dex, .aar, .so), executables (.apk, .jar, .class) and AndroidManifest (.xml).
 
 [11]: https://github.com/google/android-classyshark
 [12]: http://www.api-solutions.com/p/classyshark_6.html
+
+# Bytecode Viewer
+A Java 8 Jar & Android APK Reverse Engineering Suite (Decompiler, Editor, Debugger & More) [see more](https://github.com/Konloch/bytecode-viewer)  
+
+# Enjarify
+Enjarify is a tool for translating Dalvik bytecode to equivalent Java bytecode. This allows Java analysis tools to analyze Android applications. [see more](https://github.com/Storyyeller/enjarify)  
 
 **Please, use it only for legitimate purposes.**
 
