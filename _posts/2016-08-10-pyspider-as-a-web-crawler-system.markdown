@@ -444,6 +444,8 @@ class Handler(BaseHandler):
 [DHT网络爬虫](https://github.com/78/ssbc)  
 [豆瓣电影、书籍、小组、相册、东西等爬虫集 writen in Python](https://github.com/dontcontactme/doubanspiders)  
 [如何不用客户端下载 YouKu 视频-YouKu 实现下载 Python3 实现](http://zpz.name/2378/)  
+[一个可配置的、分布式的爬虫框架](https://github.com/yijingping/unicrawler)  
+[cloud-based web crawling platform](https://github.com/scrapinghub)  
 
 #### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
