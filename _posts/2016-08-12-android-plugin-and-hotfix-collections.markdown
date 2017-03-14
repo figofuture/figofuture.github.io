@@ -26,6 +26,7 @@ tags:
 [android-dynamic-load-awesome](https://github.com/liaohuqiu/android-dynamic-load-awesome)  
 [农民伯伯 Android动态加载jar/dex](http://www.cnblogs.com/over140/archive/2011/11/23/2259367.html)  
 [https://github.com/nuptboyzhb/AndroidPluginFramework](https://github.com/nuptboyzhb/AndroidPluginFramework)  
+[Android Plugin Framework 插件开发框架及示例程序，原理介绍等](https://github.com/limpoxe/Android-Plugin-Framework)  
 
 #### 开源的插件化框架
 [任玉刚 dynamic-load-apk](https://github.com/singwhatiwanna/dynamic-load-apk)  
@@ -41,12 +42,14 @@ tags:
 [360 DroidPlugin](https://github.com/DroidPluginTeam/DroidPlugin)  
 [Android插件化原理解析](http://weishu.me)  
 
-[Android Plugin Framework 插件开发框架及示例程序，原理介绍等](https://github.com/limpoxe/Android-Plugin-Framework)  
-
 [Small](https://github.com/wequick/Small)  
 
 [android-pluginmgr](https://github.com/houkx/android-pluginmgr)  
 [动态加载APK原理分享](http://blog.csdn.net/hkxxx/article/details/42194387)  
+
+[淘宝 Atlas](https://github.com/alibaba/atlas)  
+
+[An open source implementation of MultiAccount](https://github.com/asLody/VirtualApp)
 
 ## 热修复技术  
 云端部署APP补丁程序，客户端检测，下载，合并并应用补丁程序，热修复bug，在用户无需更新下载完整APP的情况下，快速解决用户的问题。  
@@ -61,15 +64,15 @@ tags:
 [深度理解Android InstantRun原理以及源码分析](https://github.com/nuptboyzhb/AndroidInstantRun)  
 
 #### 开源热修复框架  
-[HotFix](https://github.com/dodola/HotFix) dodola  
-[RocooFix](https://github.com/dodola/RocooFix) dodola  
-[Nuwa](https://github.com/jasonross/Nuwa) 寒江不钓  
-[DroidFix](https://github.com/bunnyblue/DroidFix) BunnyBlue  
-[AndFix](https://github.com/alibaba/AndFix) 董炼师  
-[Tinker](https://github.com/Tencent/tinker) 腾讯  
-[ZeusPlugin](https://github.com/iReaderAndroid/ZeusPlugin) 掌阅  
-[Robust](http://tech.meituan.com/android_robust.html) 美团  
-[Aceso](https://github.com/meili/Aceso) 蘑菇街  
+[HotFix dodola](https://github.com/dodola/HotFix)  
+[RocooFix dodola](https://github.com/dodola/RocooFix)  
+[Nuwa 寒江不钓](https://github.com/jasonross/Nuwa)  
+[DroidFix BunnyBlue](https://github.com/bunnyblue/DroidFix)  
+[AndFix 董炼师](https://github.com/alibaba/AndFix)  
+[Tinker 腾讯](https://github.com/Tencent/tinker)  
+[ZeusPlugin 掌阅](https://github.com/iReaderAndroid/ZeusPlugin)  
+[Robust 美团](http://tech.meituan.com/android_robust.html)  
+[Aceso 蘑菇街](https://github.com/meili/Aceso)  
 
 #### 热修复方案实践谈  
 [各大热补丁方案分析和比较](http://blog.zhaiyifan.cn/2015/11/20/HotPatchCompare/)  
