@@ -71,7 +71,7 @@ tags:
 [AndFix 董炼师](https://github.com/alibaba/AndFix)  
 [Tinker 腾讯](https://github.com/Tencent/tinker)  
 [ZeusPlugin 掌阅](https://github.com/iReaderAndroid/ZeusPlugin)  
-[Robust 美团](http://tech.meituan.com/android_robust.html)  
+[Robust 美团](https://github.com/Meituan-Dianping/Robust)  
 [Aceso 蘑菇街](https://github.com/meili/Aceso)  
 
 #### 热修复方案实践谈  
