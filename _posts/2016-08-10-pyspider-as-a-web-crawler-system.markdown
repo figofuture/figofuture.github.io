@@ -453,6 +453,11 @@ class Handler(BaseHandler):
 [Phpfetcher](https://github.com/fanfank/phpfetcher)  
 [php spider framework](https://github.com/hirudy/Tspider)  
 [我用爬虫一天时间“偷了”知乎一百万用户，只为证明PHP是世界上最好的语言](https://github.com/owner888/phpspider)  
+[爬虫组件](https://github.com/slince/spider)  
+[PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net)  
+[QueryList](https://querylist.cc)  
+[Goutte, a simple PHP Web Scraper](https://github.com/FriendsOfPHP/Goutte)  
+[]()  
 
 #### Nodejs
 [Nodejs 编写的爬虫工具](https://github.com/xwartz/spider)  
@@ -475,3 +480,6 @@ class Handler(BaseHandler):
 
 #### Golang
 [a distributed, high concurrency and powerful web crawler software](https://github.com/henrylee2cn/pholcus)  
+
+#### open-open 网络爬虫专题
+[网络爬虫](http://www.open-open.com/lib/list/96)  
