@@ -446,6 +446,11 @@ class Handler(BaseHandler):
 [如何不用客户端下载 YouKu 视频-YouKu 实现下载 Python3 实现](http://zpz.name/2378/)  
 [一个可配置的、分布式的爬虫框架](https://github.com/yijingping/unicrawler)  
 [cloud-based web crawling platform](https://github.com/scrapinghub)  
+[百度云爬虫-爬取百度云/百度网盘所有的分享文件](https://github.com/x-spiders/baiduyun-spider)  
+[爱丝APP图片爬虫，以及免支付破解VIP看图](https://github.com/x-spiders/aiss-spider)  
+[微信公众号爬虫](https://github.com/bowenpay/wechat-spider)  
+[拉勾网爬虫](https://github.com/whatsGhost/lagou_spider)  
+[百度网盘爬虫（如何爬取百度网盘）](https://www.v2ex.com/t/348731#reply7)  
 
 #### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
@@ -457,13 +462,16 @@ class Handler(BaseHandler):
 [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net)  
 [QueryList](https://querylist.cc)  
 [Goutte, a simple PHP Web Scraper](https://github.com/FriendsOfPHP/Goutte)  
-[]()  
 
 #### Nodejs
 [Nodejs 编写的爬虫工具](https://github.com/xwartz/spider)  
 [批量抓取AV磁链或封面的苦劳力](https://github.com/raawaa/jav-scrapy)  
 [Easily download all the photos from a Tumblr blog.](https://github.com/Leeiio/tumblr-downloader)  
 [DHT Spider + BitTorrent Client = P2P Spider](https://github.com/dontcontactme/p2pspider)  
+[P2P Spider修改版,添加了babel，eslint，gulp等工具来支持es6代码](https://github.com/callmelanmao/btspider)  
+[一个Node.js福利图网站爬虫程序](https://github.com/nieheyong/HanhandeSpider)  
+[一个简单的dht爬虫，用于搜集infohash](https://github.com/beilunyang/dhtCrawler)  
+[百度云分享爬虫项目](https://github.com/callmelanmao/yunshare)  
 
 #### Ruby
 [A simple DHT crawler, written in Ruby](https://github.com/dontcontactme/rbdht)  
@@ -481,5 +489,6 @@ class Handler(BaseHandler):
 #### Golang
 [a distributed, high concurrency and powerful web crawler software](https://github.com/henrylee2cn/pholcus)  
 
-#### open-open 网络爬虫专题
-[网络爬虫](http://www.open-open.com/lib/list/96)  
+#### 网络爬虫专题
+[open-open 网络爬虫专题](http://www.open-open.com/lib/list/96)  
+[你想要的爬虫，都在这里](https://github.com/x-spiders)
