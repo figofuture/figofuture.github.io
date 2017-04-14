@@ -429,6 +429,7 @@ class Handler(BaseHandler):
 [一个简单易用的爬虫框架,内置代理管理模块,灵活设置多线程爬取](https://github.com/MrJiao/SpiderJackson)  
 [A scalable web crawler framework for Java](https://github.com/code4craft/webmagic)  
 [强力 Java 爬虫，列表分页、详细页分页、ajax、微内核高扩展、配置灵活](https://git.oschina.net/l-weiwei/Spiderman2)  
+[分布式的通用爬虫，可以热插拔各个组件（提供默认的），自动切换代理，自动结构化数据与存储。使用redis，分布式调度等技术](https://github.com/xjtushilei/ScriptSpider)  
 
 #### Python
 [Scrapy](http://scrapy.org/)  
@@ -451,6 +452,7 @@ class Handler(BaseHandler):
 [微信公众号爬虫](https://github.com/bowenpay/wechat-spider)  
 [拉勾网爬虫](https://github.com/whatsGhost/lagou_spider)  
 [百度网盘爬虫（如何爬取百度网盘）](https://www.v2ex.com/t/348731#reply7)  
+[scrapy爬虫图形管理界面](https://github.com/DormyMo/SpiderKeeper)  
 
 #### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
