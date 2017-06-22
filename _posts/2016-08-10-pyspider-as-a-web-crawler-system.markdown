@@ -454,6 +454,7 @@ class Handler(BaseHandler):
 [百度网盘爬虫（如何爬取百度网盘）](https://www.v2ex.com/t/348731#reply7)  
 [scrapy爬虫图形管理界面](https://github.com/DormyMo/SpiderKeeper)  
 [PornHubBot - 🔞 全球最大成人网站 PornHub 爬虫 （Scrapy、MongoDB） 一天 500w 的海量数据](https://github.com/xiyouMc/WebHubBot)  
+[两只蠢萌京东的分布式爬虫](https://github.com/samrayleung/jd_spider)  
 
 #### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
