@@ -51,6 +51,10 @@ tags:
 
 [An open source implementation of MultiAccount](https://github.com/asLody/VirtualApp)
 
+[Qihoo360 RePlugin](https://github.com/Qihoo360/RePlugin)  
+
+[didi VirtualAPK](https://github.com/didi/VirtualAPK)  
+
 ## 热修复技术  
 云端部署APP补丁程序，客户端检测，下载，合并并应用补丁程序，热修复bug，在用户无需更新下载完整APP的情况下，快速解决用户的问题。  
 
