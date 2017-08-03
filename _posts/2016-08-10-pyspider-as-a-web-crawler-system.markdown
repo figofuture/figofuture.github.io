@@ -410,6 +410,11 @@ class Handler(BaseHandler):
 
 更多工具／框架请参考[Headless Browser and scraping - solutions](http://stackoverflow.com/questions/18539491/headless-browser-and-scraping-solutions)
 
+## 疑难杂症  
+
+#### 如果爬虫的IP地址被被爬的网站服务器屏蔽  
+爬取的时候自己的IP被被爬的网站服务器封掉了,自动重启路由器,让路由器重新分配IP,然后在去爬取内容，[dynamic_ip](https://github.com/hizdm/dynamic_ip)  
+
 ## 参考资料  
 
 [binux/pyspider](https://github.com/binux/pyspider)  
