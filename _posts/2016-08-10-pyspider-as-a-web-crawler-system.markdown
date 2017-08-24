@@ -481,6 +481,7 @@ class Handler(BaseHandler):
 [一个Node.js福利图网站爬虫程序](https://github.com/nieheyong/HanhandeSpider)  
 [一个简单的dht爬虫，用于搜集infohash](https://github.com/beilunyang/dhtCrawler)  
 [百度云分享爬虫项目](https://github.com/callmelanmao/yunshare)  
+[200行的Node爬虫花了半天的时间把网易云上的30万首歌曲信息都抓取回来](https://github.com/qiangzi7723/spider-for-netease-music)  
 
 #### Ruby
 [A simple DHT crawler, written in Ruby](https://github.com/dontcontactme/rbdht)  
