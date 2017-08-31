@@ -415,6 +415,9 @@ class Handler(BaseHandler):
 #### 如果爬虫的IP地址被被爬的网站服务器屏蔽  
 爬取的时候自己的IP被被爬的网站服务器封掉了,自动重启路由器,让路由器重新分配IP,然后在去爬取内容，[dynamic_ip](https://github.com/hizdm/dynamic_ip)  
 
+#### 与不同特性的网站做斗争
+https://github.com/luyishisi/Anti-Anti-Spider
+
 ## 参考资料  
 
 [binux/pyspider](https://github.com/binux/pyspider)  
@@ -460,6 +463,11 @@ class Handler(BaseHandler):
 [scrapy爬虫图形管理界面](https://github.com/DormyMo/SpiderKeeper)  
 [PornHubBot - 🔞 全球最大成人网站 PornHub 爬虫 （Scrapy、MongoDB） 一天 500w 的海量数据](https://github.com/xiyouMc/WebHubBot)  
 [两只蠢萌京东的分布式爬虫](https://github.com/samrayleung/jd_spider)  
+[使用scrapy,redis, mongodb,graphite实现的一个分布式网络爬虫,底层存储mongodb集群,分布式使用redis实现,爬虫状态显示使用graphite实现](https://github.com/gnemoug/distribute_crawler)  
+[新浪微博爬虫(分布式)，部署简单，接口丰富，文档详细，视频支持，可灵活定制满足自己的需求。抓取内容（PC端）包括微博用户资料、特定关键词微博、用户主页所有微博、评论信息和转发信息。欢迎watch跟进，star支持](https://github.com/ResolveWang/weibospider)  
+[a spider-man for zhihu !](https://github.com/forezp/ZhihuSpiderMan)  
+[一个灵活、友好的爬虫框架](https://github.com/DarkSand/Sasila)  
+[各种爬虫---大众点评,安居客，58，人人贷，拍拍贷, IT桔子,拉勾网，豆瓣,搜房网,ASO100,气象数据,猫眼电影,链家,PM25.in...](https://github.com/Nyloner/Nyspider)  
 
 #### PHP
 [PHP Crawler](https://sourceforge.net/projects/php-crawler/)  
