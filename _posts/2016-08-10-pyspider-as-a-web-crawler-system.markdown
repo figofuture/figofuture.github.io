@@ -509,4 +509,5 @@ https://github.com/luyishisi/Anti-Anti-Spider
 
 #### 网络爬虫专题
 [open-open 网络爬虫专题](http://www.open-open.com/lib/list/96)  
-[你想要的爬虫，都在这里](https://github.com/x-spiders)
+[你想要的爬虫，都在这里](https://github.com/x-spiders)  
+[爬虫集合](https://github.com/facert/awesome-spider)  
