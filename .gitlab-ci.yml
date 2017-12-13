@@ -1,4 +1,4 @@
-image: ruby:2.1             # the script will run in Ruby 2.1 using the Docker image ruby:2.1
+image: ruby:2.2             # the script will run in Ruby 2.1 using the Docker image ruby:2.1
 
 pages:                      # the build job must be named pages
   script:
